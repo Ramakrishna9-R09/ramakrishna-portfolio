@@ -42,8 +42,9 @@ export default function App() {
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
+          const rect = element.getBoundingClientRect();
+          const top = rect.top + window.scrollY;
+          const height = rect.height;
           if (scrollPosition >= top && scrollPosition < top + height) {
             setActiveSection(sectionId);
             break;
