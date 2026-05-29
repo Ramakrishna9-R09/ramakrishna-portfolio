@@ -37,19 +37,26 @@ export default function App() {
 
       // Active Section tracking
       const sections = ['hero', 'agent-terminal', 'architecture-explorer', 'skills', 'projects', 'certifications', 'education', 'contact'];
-      const scrollPosition = window.scrollY + 200; // offset for nav triggers
+      let currentActive = '';
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          const top = rect.top + window.scrollY;
-          const height = rect.height;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
+          // If the section occupies the viewport around the 200px mark from the top
+          if (rect.top <= 200 && rect.bottom > 200) {
+            currentActive = sectionId;
             break;
           }
         }
+      }
+
+      // Check if we are at the very bottom of the page
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+      if (isAtBottom) {
+        setActiveSection('contact');
+      } else if (currentActive) {
+        setActiveSection(currentActive);
       }
     };
 
