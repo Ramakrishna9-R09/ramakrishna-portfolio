@@ -11,6 +11,8 @@ import ScrollReveal from './components/ScrollReveal';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import AIAssistant from './components/AIAssistant';
 import ArchitectureExplorer from './components/ArchitectureExplorer';
+import { EditModeProvider } from './context/EditModeContext';
+import EditToggle from './components/EditToggle';
 import { ArrowUp, Mail } from 'lucide-react';
 
 export default function App() {
@@ -112,6 +114,7 @@ export default function App() {
   };
 
   return (
+    <EditModeProvider>
     <div 
       className="min-h-screen bg-[#030303] text-white selection:bg-purple-500/30 selection:text-purple-200 antialiased font-sans relative overflow-x-hidden"
       style={{ '--spotlight-color': spotlightColors[activeTheme] } as React.CSSProperties}
@@ -190,6 +193,9 @@ export default function App() {
       {/* Floating Interactive AI Assistant */}
       <AIAssistant />
 
+      {/* Edit Mode Toggle */}
+      <EditToggle />
+
       {/* Scroll to Top Button */}
       <button
         onClick={handleScrollToTop}
@@ -254,5 +260,6 @@ export default function App() {
         </div>
       </footer>
     </div>
+    </EditModeProvider>
   );
 }

@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight, Bot, Code, Database, Server } from 'lucide-react';
+import { getHero, saveData } from '../data/resumeData';
+import { useEditMode } from '../context/EditModeContext';
+import { EditableText, EditableTextArea, EditableList } from './EditableField';
 
 interface HeroProps {
   activeTheme: 'purple' | 'emerald' | 'indigo';
@@ -7,20 +10,24 @@ interface HeroProps {
 }
 
 export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
-  const titles = [
-    'Software Engineer',
-    'Python Specialist',
-    'AWS Serverless Architect',
-    'Certified MongoDB Developer',
-    'GenAI & Agent Builder',
-  ];
+  const { isEditMode, pendingChanges, setPendingChanges } = useEditMode();
+  const heroData = getHero();
+  const [titles, setTitles] = useState(heroData.titles);
+  const [summary, setSummary] = useState(heroData.summary);
+  const [stats, setStats] = useState(heroData.stats);
+
+  useEffect(() => {
+    if (pendingChanges) {
+      saveData('hero', { titles, stats, summary });
+      setPendingChanges(false);
+    }
+  }, [pendingChanges]);
 
   const [titleIndex, setTitleIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypSpeed] = useState(100);
 
-  // Typewriter effect
   useEffect(() => {
     let timer: any;
     const fullText = titles[titleIndex];
@@ -29,7 +36,6 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
       if (!isDeleting) {
         setCurrentText(fullText.substring(0, currentText.length + 1));
         setTypSpeed(100);
-
         if (currentText === fullText) {
           timer = setTimeout(() => setIsDeleting(true), 1500);
           return;
@@ -37,14 +43,12 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
       } else {
         setCurrentText(fullText.substring(0, currentText.length - 1));
         setTypSpeed(50);
-
         if (currentText === '') {
           setIsDeleting(false);
           setTitleIndex((prev) => (prev + 1) % titles.length);
           return;
         }
       }
-
       timer = setTimeout(handleType, typingSpeed);
     };
 
@@ -64,7 +68,6 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
     }
   };
 
-  // Theme mapping classes
   const styles = {
     purple: {
       gradientText: 'from-white via-white to-purple-400',
@@ -97,12 +100,22 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
 
   const activeStyle = styles[activeTheme];
 
+  const handleStatChange = (idx: number, field: 'value' | 'label' | 'suffix', val: string | number) => {
+    const next = [...stats];
+    next[idx] = { ...next[idx], [field]: val };
+    setStats(next);
+    setPendingChanges(true);
+  };
+
   return (
     <section id="hero" className="relative min-h-[95vh] flex items-center justify-center pt-24 overflow-hidden bg-grid">
+      {isEditMode && (
+        <div className="absolute top-20 right-6 z-30 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded border border-emerald-500/30">
+          EDIT MODE
+        </div>
+      )}
 
-      {/* Modern concentric visual layout lines and gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Soft studio backlight matching the theme */}
         <div className={`absolute top-[-10%] left-1/2 -translate-x-1/2 w-[90%] md:w-[75%] h-[450px] rounded-full transition-all duration-1000 ${activeStyle.glowClass}`} style={{
           background: activeTheme === 'emerald' 
             ? 'radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.02) 50%, rgba(3, 3, 3, 0) 100%)' 
@@ -111,13 +124,10 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
             : 'radial-gradient(ellipse at 50% 30%, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.02) 50%, rgba(3, 3, 3, 0) 100%)',
           filter: 'blur(80px)'
         }} />
-        
-        {/* Apple-style concentric visual dividers representing orbit lines */}
         <div className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[350px] md:w-[650px] h-[350px] md:h-[650px] border border-white/[0.02] rounded-full pointer-events-none" />
         <div className="absolute top-[-2%] left-1/2 -translate-x-1/2 w-[500px] md:w-[950px] h-[500px] md:h-[950px] border border-white/[0.012] rounded-full pointer-events-none" />
       </div>
 
-      {/* Floating Theme Switcher Pill (Top Right) */}
       <div className="absolute top-4 right-6 z-20 flex items-center gap-2.5 bg-white/5 border border-white/10 rounded-full p-1.5 backdrop-blur-md">
         <button
           onClick={() => setActiveTheme('purple')}
@@ -137,15 +147,13 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-        {/* Announcement Glass pill */}
         <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill border text-xs md:text-sm mb-8 transition-colors animate-float ${activeStyle.pillBorder}`}>
           <Bot className={`w-4 h-4 animate-pulse ${activeStyle.pillBot}`} />
           <span>Anthropic Claude API & Agentic Systems Developer</span>
         </div>
 
-        {/* Hero Title */}
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-black font-display tracking-tight text-white mb-6">
-          Venkata Ramakrishna
+          <EditableText value="Venkata Ramakrishna" onChange={(_v) => {}} tag="span" className="inline" />
           <span className="block mt-2 bg-gradient-to-r from-white via-white to-purple-400 bg-clip-text text-transparent transition-all duration-500" style={{
             backgroundImage: activeTheme === 'emerald' 
               ? 'linear-gradient(to right, #ffffff, #ffffff, #10b981)' 
@@ -153,23 +161,22 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
               ? 'linear-gradient(to right, #ffffff, #ffffff, #6366f1)' 
               : 'linear-gradient(to right, #ffffff, #ffffff, #a855f7)'
           }}>
-            Kamepalli
+            <EditableText value="Kamepalli" onChange={(_v) => {}} tag="span" />
           </span>
         </h1>
 
-        {/* Dynamic Typing Title */}
-        <div className="h-10 md:h-14 flex items-center justify-center mb-8">
-          <p className="text-xl md:text-3xl font-display font-semibold tracking-wide text-purple-200">
-            I am a <span className="text-white border-r-2 border-purple-500 pr-1 animate-pulse">{currentText}</span>
-          </p>
+        <div className="h-auto md:h-14 flex items-center justify-center mb-8 flex-col">
+          {isEditMode ? (
+            <EditableList items={titles} onChange={(v) => { setTitles(v); setPendingChanges(true); }} className="text-center" itemClass="text-xl md:text-3xl font-display font-semibold tracking-wide text-purple-200" bullet="" />
+          ) : (
+            <p className="text-xl md:text-3xl font-display font-semibold tracking-wide text-purple-200">
+              I am a <span className="text-white border-r-2 border-purple-500 pr-1 animate-pulse">{currentText}</span>
+            </p>
+          )}
         </div>
 
-        {/* Short Summary */}
-        <p className="text-gray-400 text-sm md:text-lg max-w-2xl leading-relaxed mb-12">
-          Integrated M.Tech Software Engineering student at <span className="text-white font-semibold">VIT Chennai</span> (CGPA: 8.27). Specialized in scalable Python systems, event-driven AWS serverless pipelines, MongoDB indexing, and advanced agentic architectures.
-        </p>
+        <EditableTextArea value={summary} onChange={(v) => { setSummary(v); setPendingChanges(true); }} className="text-gray-400 text-sm md:text-lg max-w-2xl leading-relaxed mb-12" />
 
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md">
           <button
             onClick={() => handleScrollTo('agent-terminal')}
@@ -189,7 +196,19 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
           </button>
         </div>
 
-        {/* Floating Skills Widgets */}
+        {isEditMode && (
+          <div className="mt-8 w-full max-w-md">
+            <p className="text-[10px] uppercase font-mono text-gray-500 mb-3 text-left">Hero Stats</p>
+            {stats.map((stat, i) => (
+              <div key={i} className="flex gap-2 mb-2 items-center">
+                <input type="number" value={stat.value} onChange={(e) => handleStatChange(i, 'value', Number(e.target.value))} className="w-16 bg-white/10 border border-purple-500/40 rounded px-2 py-1 text-white text-sm" />
+                <input type="text" value={stat.label} onChange={(e) => handleStatChange(i, 'label', e.target.value)} className="flex-1 bg-white/10 border border-purple-500/40 rounded px-2 py-1 text-white text-sm" />
+                <input type="text" value={stat.suffix} onChange={(e) => handleStatChange(i, 'suffix', e.target.value)} className="w-12 bg-white/10 border border-purple-500/40 rounded px-2 py-1 text-white text-sm" />
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="hidden xl:block absolute left-[-150px] top-[30%] animate-float">
           <div className="glass-card p-4 rounded-2xl flex items-center gap-3 border border-white/5">
             <div className={`p-2.5 rounded-xl ${activeStyle.widgetClass}`}>
