@@ -1,5 +1,5 @@
 import { useState, useEffect, type MouseEvent } from 'react';
-import { Menu, X, FileText, Bot, Layers } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 interface NavbarProps {
   activeSection: string;
@@ -25,10 +25,9 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
 
   const navItems = [
     { id: 'hero', name: 'Home' },
-    { id: 'agent-terminal', name: 'Agent Terminal', icon: <Bot className="w-4 h-4 inline mr-1" /> },
-    { id: 'architecture-explorer', name: 'Architecture', icon: <Layers className="w-4 h-4 inline mr-1" /> },
     { id: 'skills', name: 'Skills' },
     { id: 'projects', name: 'Projects' },
+    { id: 'experience', name: 'Experience' },
     { id: 'certifications', name: 'Credentials' },
     { id: 'education', name: 'Education' },
     { id: 'contact', name: 'Contact' },
@@ -114,7 +113,6 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >
-              {item.icon}
               {item.name}
             </a>
           ))}
@@ -194,7 +192,6 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >
-              {item.icon}
               {item.name}
             </a>
           ))}
