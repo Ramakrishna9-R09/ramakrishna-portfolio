@@ -26,7 +26,7 @@ body {
 
 .premium-shell {
   background:
-    linear-gradient(180deg, #050505 0%, #101010 44%, #f4f4f2 44.1%, #fafafa 100%);
+    linear-gradient(180deg, #050505 0%, #101010 44%, #0b0b0b 44.1%, #050505 100%);
 }
 
 .automotive-background {
@@ -38,7 +38,7 @@ body {
   background:
     radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.18), transparent 34%),
     radial-gradient(circle at 82% 18%, rgba(181, 23, 23, 0.16), transparent 26%),
-    linear-gradient(180deg, #030303 0%, #111 42%, #ededeb 42.1%, #fbfbfb 100%);
+    linear-gradient(180deg, #030303 0%, #111 42%, #101010 42.1%, #050505 100%);
 }
 
 .automotive-background::before {
@@ -360,4 +360,255 @@ h1, h2, h3, h4, h5, h6 {
 .terminal-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.28);
   border-radius: 2px;
+}
+
+/* Premium continuation layer for all sections below the hero */
+#agent-terminal,
+#architecture-explorer,
+#skills,
+#projects,
+#experience,
+#certifications,
+#education,
+#contact {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(8, 8, 8, 0.96), rgba(18, 18, 18, 0.98)) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#projects,
+#certifications,
+#contact {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(185, 28, 28, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(14, 14, 14, 0.98), rgba(5, 5, 5, 0.98)) !important;
+}
+
+#agent-terminal .bg-grid,
+#architecture-explorer .bg-grid,
+#skills .bg-grid,
+#projects .bg-grid,
+#experience .bg-grid,
+#certifications .bg-grid,
+#education .bg-grid,
+#contact .bg-grid {
+  opacity: 0 !important;
+}
+
+#agent-terminal .purple-horizon,
+#agent-terminal .purple-horizon-bottom,
+#architecture-explorer .purple-horizon,
+#architecture-explorer .purple-horizon-bottom,
+#skills .purple-horizon,
+#skills .purple-horizon-bottom,
+#projects .purple-horizon,
+#projects .purple-horizon-bottom,
+#experience .purple-horizon,
+#experience .purple-horizon-bottom,
+#certifications .purple-horizon,
+#certifications .purple-horizon-bottom,
+#education .purple-horizon,
+#education .purple-horizon-bottom,
+#contact .purple-horizon,
+#contact .purple-horizon-bottom,
+footer .purple-horizon-bottom {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.14), rgba(185, 28, 28, 0.06) 38%, transparent 72%) !important;
+  filter: blur(76px) !important;
+}
+
+#agent-terminal .glass-card,
+#architecture-explorer .glass-card,
+#skills .glass-card,
+#projects .glass-card,
+#experience .glass-card,
+#certifications .glass-card,
+#education .glass-card,
+#contact .glass-card,
+footer .glass-card {
+  background: rgba(255, 255, 255, 0.075) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32) !important;
+}
+
+#agent-terminal .glass-card:hover,
+#architecture-explorer .glass-card:hover,
+#skills .glass-card:hover,
+#projects .glass-card:hover,
+#experience .glass-card:hover,
+#certifications .glass-card:hover,
+#education .glass-card:hover,
+#contact .glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  background: rgba(255, 255, 255, 0.105) !important;
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.42) !important;
+}
+
+#agent-terminal [class*="rounded-3xl"],
+#architecture-explorer [class*="rounded-3xl"],
+#skills [class*="rounded-3xl"],
+#projects [class*="rounded-3xl"],
+#experience [class*="rounded-3xl"],
+#certifications [class*="rounded-3xl"],
+#education [class*="rounded-3xl"],
+#contact [class*="rounded-3xl"],
+footer [class*="rounded-3xl"] {
+  border-radius: 18px !important;
+}
+
+#agent-terminal [class*="text-purple"],
+#architecture-explorer [class*="text-purple"],
+#skills [class*="text-purple"],
+#projects [class*="text-purple"],
+#experience [class*="text-purple"],
+#certifications [class*="text-purple"],
+#education [class*="text-purple"],
+#contact [class*="text-purple"],
+#agent-terminal [class*="text-indigo"],
+#architecture-explorer [class*="text-indigo"],
+#skills [class*="text-indigo"],
+#projects [class*="text-indigo"],
+#experience [class*="text-indigo"],
+#certifications [class*="text-indigo"],
+#education [class*="text-indigo"],
+#contact [class*="text-indigo"],
+footer [class*="text-purple"],
+footer [class*="text-indigo"] {
+  color: #fca5a5 !important;
+}
+
+#agent-terminal [class*="border-purple"],
+#architecture-explorer [class*="border-purple"],
+#skills [class*="border-purple"],
+#projects [class*="border-purple"],
+#experience [class*="border-purple"],
+#certifications [class*="border-purple"],
+#education [class*="border-purple"],
+#contact [class*="border-purple"],
+#agent-terminal [class*="border-indigo"],
+#architecture-explorer [class*="border-indigo"],
+#skills [class*="border-indigo"],
+#projects [class*="border-indigo"],
+#experience [class*="border-indigo"],
+#certifications [class*="border-indigo"],
+#education [class*="border-indigo"],
+#contact [class*="border-indigo"],
+footer [class*="border-purple"],
+footer [class*="border-indigo"] {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+#agent-terminal [class*="bg-purple"],
+#architecture-explorer [class*="bg-purple"],
+#skills [class*="bg-purple"],
+#projects [class*="bg-purple"],
+#experience [class*="bg-purple"],
+#certifications [class*="bg-purple"],
+#education [class*="bg-purple"],
+#contact [class*="bg-purple"],
+#agent-terminal [class*="bg-indigo"],
+#architecture-explorer [class*="bg-indigo"],
+#skills [class*="bg-indigo"],
+#projects [class*="bg-indigo"],
+#experience [class*="bg-indigo"],
+#certifications [class*="bg-indigo"],
+#education [class*="bg-indigo"],
+#contact [class*="bg-indigo"],
+footer [class*="bg-purple"],
+footer [class*="bg-indigo"] {
+  background-color: rgba(185, 28, 28, 0.12) !important;
+  background-image: none !important;
+}
+
+#agent-terminal button[class*="bg-purple"],
+#architecture-explorer button[class*="bg-purple"],
+#projects button[class*="bg-purple"],
+#certifications button[class*="bg-purple"],
+#contact button[class*="bg-purple"],
+footer a[class*="from-purple"] {
+  background: linear-gradient(180deg, #ffffff, #e7e7e7) !important;
+  color: #050505 !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 20px 55px rgba(255, 255, 255, 0.08) !important;
+}
+
+#agent-terminal [class*="shadow-purple"],
+#architecture-explorer [class*="shadow-purple"],
+#skills [class*="shadow-purple"],
+#projects [class*="shadow-purple"],
+#experience [class*="shadow-purple"],
+#certifications [class*="shadow-purple"],
+#education [class*="shadow-purple"],
+#contact [class*="shadow-purple"],
+footer [class*="shadow-purple"] {
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32) !important;
+}
+
+#agent-terminal h2,
+#architecture-explorer h2,
+#skills h2,
+#projects h2,
+#experience h2,
+#certifications h2,
+#education h2,
+#contact h2 {
+  letter-spacing: -0.03em;
+}
+
+#agent-terminal h2::after,
+#architecture-explorer h2::after,
+#skills h2::after,
+#projects h2::after,
+#experience h2::after,
+#certifications h2::after,
+#education h2::after,
+#contact h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin: 18px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), rgba(185,28,28,0.9), transparent);
+}
+
+footer {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 35%),
+    linear-gradient(180deg, #101010, #050505) !important;
+}
+
+.fixed.bottom-6.right-20,
+.fixed.bottom-6.right-6,
+.fixed.bottom-72.left-6,
+.fixed.sm\:bottom-24 {
+  border-radius: 14px !important;
+}
+
+button.fixed.bottom-6.right-20,
+button.fixed.bottom-6.right-6 {
+  background: rgba(255, 255, 255, 0.09) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34) !important;
+  backdrop-filter: blur(22px) saturate(135%) !important;
+}
+
+button.fixed.bottom-6.right-20:hover,
+button.fixed.bottom-6.right-6:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.32) !important;
+}
+
+button.fixed.bottom-6.right-20 svg,
+button.fixed.bottom-6.right-6 svg,
+.fixed.top-24.right-6 svg,
+.fixed.top-36.right-6 svg {
+  color: #fca5a5 !important;
+}
+
+.fixed.top-24.right-6 {
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
 }
