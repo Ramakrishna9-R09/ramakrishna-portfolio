@@ -100,7 +100,7 @@ export default function Certifications() {
                       </span>
                     )}
                     {isEditMode && (
-                      <button onClick={() => removeCert(idx)} className="text-red-400 hover:text-red-300 text-xs p-1">✕</button>
+                      <button onClick={() => removeCert(idx)} className="text-white/70 hover:text-white text-xs p-1">✕</button>
                     )}
                   </div>
                 </div>

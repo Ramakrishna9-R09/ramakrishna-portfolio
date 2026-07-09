@@ -62,7 +62,7 @@ export default function InteractiveBackground({ activeTheme = 'purple' }: Intera
     window.addEventListener('mouseleave', handleMouseLeave);
 
     const getThemeColor = (alpha: number) => {
-      if (activeTheme === 'emerald') return `rgba(185, 28, 28, ${alpha})`;
+      if (activeTheme === 'emerald') return `rgba(244, 244, 245, ${alpha})`;
       if (activeTheme === 'indigo') return `rgba(244, 244, 245, ${alpha})`;
       return `rgba(255, 255, 255, ${alpha})`;
     };

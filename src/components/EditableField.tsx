@@ -81,7 +81,7 @@ export function EditableList({ items, onChange, className = '', itemClass = '', 
               onChange={(e) => handleChange(i, e.target.value)}
               className="flex-1 bg-white/10 border border-purple-500/40 rounded px-2 py-1 text-white text-sm outline-none"
             />
-            <button onClick={() => removeItem(i)} className="text-red-400 hover:text-red-300 text-xs px-1">✕</button>
+            <button onClick={() => removeItem(i)} className="text-white/70 hover:text-white text-xs px-1">✕</button>
           </div>
         ))}
         <button onClick={addItem} className="text-purple-400 hover:text-purple-300 text-xs text-left mt-1">+ Add item</button>

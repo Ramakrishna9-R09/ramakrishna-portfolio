@@ -89,21 +89,21 @@ export default function App() {
   };
 
   const themeGradients = {
-    purple: { color1: 'rgba(255, 255, 255, 0.09)', color2: 'rgba(185, 28, 28, 0.07)' },
-    emerald: { color1: 'rgba(244, 244, 245, 0.08)', color2: 'rgba(220, 38, 38, 0.06)' },
+    purple: { color1: 'rgba(255, 255, 255, 0.09)', color2: 'rgba(244, 244, 245, 0.05)' },
+    emerald: { color1: 'rgba(244, 244, 245, 0.08)', color2: 'rgba(255, 255, 255, 0.04)' },
     indigo: { color1: 'rgba(161, 161, 170, 0.08)', color2: 'rgba(255, 255, 255, 0.045)' }
   };
 
   const spotlightColors = {
     purple: 'rgba(255, 255, 255, 0.055)',
-    emerald: 'rgba(185, 28, 28, 0.045)',
+    emerald: 'rgba(255, 255, 255, 0.045)',
     indigo: 'rgba(244, 244, 245, 0.04)'
   };
 
   return (
     <EditModeProvider>
     <div 
-      className="premium-shell min-h-screen text-white selection:bg-red-500/30 selection:text-white antialiased font-sans relative overflow-x-hidden"
+      className="premium-shell min-h-screen text-white selection:bg-white/30 selection:text-black antialiased font-sans relative overflow-x-hidden"
       style={{ '--spotlight-color': spotlightColors[activeTheme] } as React.CSSProperties}
     >
       <div className="automotive-background" />
@@ -114,10 +114,10 @@ export default function App() {
 
       <div className="ambient-glow-container">
         <div className="ambient-glow-1 transition-all duration-1000" style={{ background: `radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, ${themeGradients[activeTheme].color1} 28%, rgba(3, 3, 3, 0) 72%)` }} />
-        <div className="ambient-glow-2 transition-all duration-1000" style={{ background: `radial-gradient(circle, rgba(185, 28, 28, 0.11) 0%, ${themeGradients[activeTheme].color2} 36%, rgba(3, 3, 3, 0) 72%)` }} />
+        <div className="ambient-glow-2 transition-all duration-1000" style={{ background: `radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, ${themeGradients[activeTheme].color2} 36%, rgba(3, 3, 3, 0) 72%)` }} />
       </div>
 
-      <div className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-white via-red-500 to-white z-50 transition-all duration-300" style={{ width: `${scrollProgress}%` }} />
+      <div className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-white via-neutral-300 to-white z-50 transition-all duration-300" style={{ width: `${scrollProgress}%` }} />
 
       <Navbar activeSection={activeSection} activeTheme={activeTheme} />
       <PerformanceMonitor />

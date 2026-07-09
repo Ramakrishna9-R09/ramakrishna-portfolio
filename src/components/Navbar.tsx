@@ -55,23 +55,23 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
     purple: {
       bg: 'from-white to-neutral-300 shadow-white/10 text-black',
       textGrad: 'from-white via-white to-neutral-300',
-      icon: 'text-red-300',
+      icon: 'text-white',
       activeTab: 'bg-white text-black shadow-lg shadow-white/10',
-      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-red-500 pl-4'
+      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-white pl-4'
     },
     emerald: {
-      bg: 'from-red-600 to-red-800 shadow-red-500/20',
-      textGrad: 'from-white via-white to-red-200',
-      icon: 'text-red-300',
+      bg: 'from-white to-neutral-300 shadow-white/10',
+      textGrad: 'from-white via-white to-neutral-300',
+      icon: 'text-white',
       activeTab: 'bg-white text-black shadow-lg shadow-white/10',
-      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-red-500 pl-4'
+      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-white pl-4'
     },
     indigo: {
       bg: 'from-neutral-700 to-neutral-950 shadow-white/10',
       textGrad: 'from-white via-white to-neutral-400',
-      icon: 'text-red-300',
+      icon: 'text-white',
       activeTab: 'bg-white text-black shadow-lg shadow-white/10',
-      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-red-500 pl-4'
+      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-white pl-4'
     }
   };
 

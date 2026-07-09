@@ -122,7 +122,7 @@ export default function Projects() {
               key={idx}
               onMouseMove={handleMouseMove}
               style={{
-                background: 'radial-gradient(350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(255, 255, 255, 0.09), rgba(185, 28, 28, 0.025), transparent), rgba(255, 255, 255, 0.02)'
+                background: 'radial-gradient(350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(255, 255, 255, 0.09), rgba(244, 244, 245, 0.025), transparent), rgba(255, 255, 255, 0.02)'
               }}
               className={`glass-card border-white/5 rounded-3xl p-6 flex flex-col justify-between hover:scale-[1.01] transition-transform duration-300 relative group overflow-hidden ${idx === 0 ? 'md:col-span-2 lg:grid lg:grid-cols-[1fr_0.72fr] lg:gap-8' : ''}`}
             >
@@ -141,7 +141,7 @@ export default function Projects() {
                   </div>
                   <div className="flex items-center gap-2">
                     {isEditMode && (
-                      <button onClick={() => removeProject(idx)} className="text-red-400 hover:text-red-300 text-xs px-2 py-1 rounded hover:bg-red-500/10">Delete</button>
+                      <button onClick={() => removeProject(idx)} className="text-white/70 hover:text-white text-xs px-2 py-1 rounded hover:bg-white/10">Delete</button>
                     )}
                     <span className="text-xs text-gray-500 font-mono flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 text-purple-400" />

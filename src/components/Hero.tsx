@@ -81,7 +81,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
   const styles = {
     purple: {
       pillBorder: 'border-white/15 text-white/80',
-      pillBot: 'text-red-300',
+      pillBot: 'text-white',
       glowClass: 'purple-horizon',
       buttonClass: 'from-white to-neutral-200 hover:from-white hover:to-white text-black shadow-white/10 hover:shadow-white/20',
       widgetClass: 'bg-white/10 text-white',
@@ -89,7 +89,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
     },
     emerald: {
       pillBorder: 'border-white/15 text-white/80',
-      pillBot: 'text-red-300',
+      pillBot: 'text-white',
       glowClass: 'purple-horizon',
       buttonClass: 'from-white to-neutral-200 hover:from-white hover:to-white text-black shadow-white/10 hover:shadow-white/20',
       widgetClass: 'bg-white/10 text-white',
@@ -97,7 +97,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
     },
     indigo: {
       pillBorder: 'border-white/15 text-white/80',
-      pillBot: 'text-red-300',
+      pillBot: 'text-white',
       glowClass: 'purple-horizon',
       buttonClass: 'from-white to-neutral-200 hover:from-white hover:to-white text-black shadow-white/10 hover:shadow-white/20',
       widgetClass: 'bg-white/10 text-white',
@@ -135,10 +135,10 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
           style={{
             background:
               activeTheme === 'emerald'
-                ? 'radial-gradient(ellipse at 50% 30%, rgba(185, 28, 28, 0.12) 0%, rgba(255, 255, 255, 0.025) 50%, rgba(3, 3, 3, 0) 100%)'
+                ? 'radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.10) 0%, rgba(244, 244, 245, 0.025) 50%, rgba(3, 3, 3, 0) 100%)'
                 : activeTheme === 'indigo'
                   ? 'radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.10) 0%, rgba(161, 161, 170, 0.025) 50%, rgba(3, 3, 3, 0) 100%)'
-                  : 'radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.12) 0%, rgba(185, 28, 28, 0.025) 50%, rgba(3, 3, 3, 0) 100%)',
+                  : 'radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.12) 0%, rgba(244, 244, 245, 0.025) 50%, rgba(3, 3, 3, 0) 100%)',
             filter: 'blur(80px)',
           }}
         />
@@ -177,7 +177,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
           </h1>
 
           <p className="text-lg md:text-2xl font-display font-semibold tracking-wide text-white/80 mb-4 min-h-8">
-            I build as a <span className="text-white border-r-2 border-red-500 pr-1 animate-pulse">{currentText}</span>
+            I build as a <span className="text-white border-r-2 border-white pr-1 animate-pulse">{currentText}</span>
           </p>
 
           <p className="text-gray-300 text-sm md:text-base max-w-2xl leading-relaxed mb-5">
@@ -242,7 +242,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
           <div className="glass-card rounded-2xl border-white/15 overflow-hidden bg-black/55 shadow-2xl shadow-black/50">
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/[0.04]">
               <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80" />
+                <span className="w-3 h-3 rounded-full bg-white/80" />
                 <span className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
                 <span className="ml-2 text-xs font-mono text-gray-400">claude-code-workbench</span>
@@ -267,7 +267,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
                     <p className="text-white/85">
                       <span className="text-gray-500">$</span> {line.prompt}
                     </p>
-                    <p className="mt-2 text-red-100 flex items-center gap-2">
+                    <p className="mt-2 text-white/85 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4" />
                       {line.result}
                     </p>
@@ -290,7 +290,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
               </div>
 
               <div className="mt-4 rounded-2xl border border-white/15 bg-white/[0.08] p-3.5 flex items-start gap-3">
-                <Sparkles className="w-5 h-5 text-red-200 mt-0.5" />
+                <Sparkles className="w-5 h-5 text-white mt-0.5" />
                 <p className="text-xs xl:text-sm text-gray-300 leading-relaxed">
                   Designed like a live engineering artifact: commands, telemetry, project traces, credentials, and contact paths all visible without recruiter guesswork.
                 </p>
@@ -299,8 +299,8 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
               <div className="mt-4 flex items-center justify-between gap-4">
                 <div className="text-[10px] uppercase tracking-widest font-mono text-gray-500">Operator theme</div>
                 <div className="flex items-center gap-2.5 bg-white/5 border border-white/10 rounded-full p-1.5 backdrop-blur-md">
-                  <button aria-label="Black theme" onClick={() => setActiveTheme('purple')} className={`w-5 h-5 rounded-full bg-neutral-100 border-2 cursor-pointer transition-transform ${activeTheme === 'purple' ? 'border-red-500 scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
-                  <button aria-label="Performance theme" onClick={() => setActiveTheme('emerald')} className={`w-5 h-5 rounded-full bg-red-600 border-2 cursor-pointer transition-transform ${activeTheme === 'emerald' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
+                  <button aria-label="Black theme" onClick={() => setActiveTheme('purple')} className={`w-5 h-5 rounded-full bg-neutral-100 border-2 cursor-pointer transition-transform ${activeTheme === 'purple' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
+                  <button aria-label="Performance theme" onClick={() => setActiveTheme('emerald')} className={`w-5 h-5 rounded-full bg-neutral-300 border-2 cursor-pointer transition-transform ${activeTheme === 'emerald' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
                   <button aria-label="Midnight theme" onClick={() => setActiveTheme('indigo')} className={`w-5 h-5 rounded-full bg-neutral-700 border-2 cursor-pointer transition-transform ${activeTheme === 'indigo' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
                 </div>
               </div>

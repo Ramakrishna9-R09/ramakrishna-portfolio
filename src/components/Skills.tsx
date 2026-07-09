@@ -16,7 +16,7 @@ function CircularProgress({ level, activeTheme }: { level: number; activeTheme: 
 
   const themeColors = {
     purple: { stroke: 'url(#skills-purple-grad)', text: 'text-white', glow: 'rgba(255, 255, 255, 0.24)' },
-    emerald: { stroke: 'url(#skills-emerald-grad)', text: 'text-white', glow: 'rgba(185, 28, 28, 0.24)' },
+    emerald: { stroke: 'url(#skills-emerald-grad)', text: 'text-white', glow: 'rgba(255, 255, 255, 0.2)' },
     indigo: { stroke: 'url(#skills-indigo-grad)', text: 'text-white', glow: 'rgba(244, 244, 245, 0.2)' }
   };
 
@@ -28,11 +28,11 @@ function CircularProgress({ level, activeTheme }: { level: number; activeTheme: 
         <defs>
           <linearGradient id="skills-purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="100%" stopColor="#b91c1c" />
+            <stop offset="100%" stopColor="#d4d4d8" />
           </linearGradient>
           <linearGradient id="skills-emerald-grad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#f4f4f5" />
-            <stop offset="100%" stopColor="#dc2626" />
+            <stop offset="100%" stopColor="#d4d4d8" />
           </linearGradient>
           <linearGradient id="skills-indigo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#ffffff" />
@@ -155,7 +155,7 @@ export default function Skills({ activeTheme = 'purple' }: SkillsProps) {
                       <input type="range" min={0} max={100} value={sk.level} onChange={(e) => updateSkill(ci, si, 'level', Number(e.target.value))} className="w-20 accent-purple-500" />
                       <span className="text-xs text-purple-400 font-mono w-8">{sk.level}%</span>
                       <EditableText value={sk.info} onChange={(v) => updateSkill(ci, si, 'info', v)} className="text-xs text-gray-500 flex-1" tag="span" />
-                      <button onClick={() => removeSkill(ci, si)} className="text-red-400 hover:text-red-300 text-xs">✕</button>
+                      <button onClick={() => removeSkill(ci, si)} className="text-white/70 hover:text-white text-xs">✕</button>
                     </div>
                   ))}
                   <button onClick={() => addSkill(ci)} className="text-purple-400 hover:text-purple-300 text-xs mt-1">+ Add skill</button>

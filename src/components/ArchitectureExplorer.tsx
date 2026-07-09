@@ -694,7 +694,7 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                           : 'bg-white/[0.02] border-white/5 hover:border-white/15'
                       }`}
                     >
-                      <div className="p-2 rounded-xl bg-rose-500/10 text-rose-400 mb-2">
+                      <div className="p-2 rounded-xl bg-white/10 text-white mb-2">
                         <Server className="w-5 h-5" />
                       </div>
                       <span className="text-[11px] font-bold font-display text-white">Semantic Cache</span>
@@ -945,13 +945,13 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                   <div className="pt-4 border-t border-white/5 flex flex-col gap-2.5">
                     <div className="flex justify-between items-center">
                       <span className="text-[10px] uppercase text-gray-500 font-bold flex items-center gap-1">
-                        <Server className="w-3.5 h-3.5 text-rose-400" />
+                        <Server className="w-3.5 h-3.5 text-white" />
                         Redis Cache Store ({redisKeys.length})
                       </span>
                       {redisKeys.length > 0 && (
                         <button
                           onClick={handleFlushCache}
-                          className="text-[9px] text-rose-400 hover:text-rose-300 font-semibold flex items-center gap-1 cursor-pointer hover:underline"
+                          className="text-[9px] text-white/80 hover:text-white font-semibold flex items-center gap-1 cursor-pointer hover:underline"
                         >
                           <Trash2 className="w-3 h-3" /> Flush
                         </button>
@@ -960,7 +960,7 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                     {redisKeys.length > 0 ? (
                       <div className="flex flex-wrap gap-1">
                         {redisKeys.map((key) => (
-                          <span key={key} className="text-[8px] font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/25">
+                          <span key={key} className="text-[8px] font-mono px-2 py-0.5 rounded bg-white/10 text-white border border-white/20">
                             {key.replace('chat_cache:', '')}
                           </span>
                         ))}
@@ -999,7 +999,7 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 select-none">
                 <div className="glass-card p-3 rounded-2xl bg-black/60 text-center flex flex-col gap-0.5">
                   <span className="text-[8px] text-gray-500 uppercase font-mono tracking-wider">Cache Hit</span>
-                  <span className={`text-xs font-mono font-bold ${telemetry.cacheHit === 'TRUE' ? 'text-emerald-400' : 'text-rose-400'}`}>
+                  <span className={`text-xs font-mono font-bold ${telemetry.cacheHit === 'TRUE' ? 'text-emerald-400' : 'text-white'}`}>
                     {telemetry.cacheHit}
                   </span>
                 </div>
@@ -1036,7 +1036,7 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                         {log.includes('✓') || log.includes('SUCCESS') ? (
                           <span className="text-emerald-400">{log}</span>
                         ) : log.includes('✗') || log.includes('🗑️') ? (
-                          <span className="text-rose-400">{log}</span>
+                          <span className="text-white">{log}</span>
                         ) : log.includes('⚡') ? (
                           <span className="text-purple-400 font-semibold">{log}</span>
                         ) : log.includes('🤖') || log.includes('🧠') ? (

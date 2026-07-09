@@ -325,7 +325,7 @@ export default function AgentTerminal() {
             {/* Terminal Title Bar */}
             <div className="bg-white/5 border-b border-white/10 px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-white/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                 <span className="text-xs text-gray-400 font-mono ml-2 flex items-center gap-1.5 select-none">
@@ -351,7 +351,7 @@ export default function AgentTerminal() {
                       : line.type === 'success'
                       ? 'text-emerald-400'
                       : line.type === 'error'
-                      ? 'text-rose-400'
+                      ? 'text-white'
                       : line.type === 'header'
                       ? 'text-purple-400 font-semibold'
                       : 'text-gray-400'
