@@ -121,7 +121,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-start lg:items-center justify-center pt-24 pb-10 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-start lg:items-center justify-center pt-28 pb-12 overflow-hidden">
       {isEditMode && (
         <div className="absolute top-20 right-6 z-30 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded border border-emerald-500/30">
           EDIT MODE
@@ -146,23 +146,23 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
         <div className="absolute top-[-2%] left-1/2 -translate-x-1/2 w-[500px] md:w-[950px] h-[500px] md:h-[950px] border border-white/[0.012] rounded-full pointer-events-none" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-[1.02fr_0.98fr] gap-8 lg:gap-10 items-center">
+      <div className="max-w-[1180px] mx-auto px-6 relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
         <div className="text-left">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs md:text-sm ${activeStyle.badge}`}>
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs md:text-sm ${activeStyle.badge}`}>
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               <span className="font-semibold">Open to full-time software engineering roles</span>
             </div>
-            <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill border text-xs md:text-sm transition-colors ${activeStyle.pillBorder}`}>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill border text-xs md:text-sm transition-colors ${activeStyle.pillBorder}`}>
               <Bot className={`w-4 h-4 ${activeStyle.pillBot}`} />
-              <span>Claude API, MCP, Agent Skills</span>
+              <span>Claude API, MCP, agent systems</span>
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl xl:text-7xl font-black font-display tracking-tight text-white mb-4 leading-[0.9]">
+          <h1 className="text-5xl sm:text-6xl xl:text-8xl font-black font-display tracking-tight text-white mb-5 leading-[0.86]">
             Venkata Ramakrishna
             <span
-              className="block mt-2 bg-gradient-to-r from-white via-neutral-200 to-white/65 bg-clip-text text-transparent transition-all duration-500"
+              className="block mt-2 bg-gradient-to-r from-white via-neutral-200 to-white/55 bg-clip-text text-transparent transition-all duration-500"
               style={{
                 backgroundImage:
                   activeTheme === 'emerald'
@@ -176,11 +176,11 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
             </span>
           </h1>
 
-          <p className="text-lg md:text-2xl font-display font-semibold tracking-wide text-white/80 mb-4 min-h-8">
+          <p className="text-xl md:text-3xl font-display font-semibold tracking-tight text-white/82 mb-5 min-h-9">
             I build as a <span className="text-white border-r-2 border-white pr-1 animate-pulse">{currentText}</span>
           </p>
 
-          <p className="text-gray-300 text-sm md:text-base max-w-2xl leading-relaxed mb-5">
+          <p className="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed mb-6">
             Integrated M.Tech Software Engineering student at <span className="text-white font-semibold">VIT Chennai</span> building Python-first backend systems, AWS serverless workflows, MongoDB-backed products, and agentic interfaces that recruiters can inspect directly.
           </p>
 
@@ -192,11 +192,11 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center mb-7">
             <a
               href="./Ramakrishna.pdf"
               target="_blank"
-              className={`px-7 py-3.5 rounded-md bg-gradient-to-r font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer ${activeStyle.buttonClass}`}
+              className={`px-8 py-4 rounded-full bg-gradient-to-r font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer ${activeStyle.buttonClass}`}
             >
               <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
               Download Resume
@@ -204,7 +204,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
 
             <button
               onClick={() => handleScrollTo('projects')}
-              className="px-7 py-3.5 rounded-md glass-pill hover:bg-white/10 font-semibold text-white hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 border border-white/15 cursor-pointer"
+              className="px-8 py-4 rounded-full glass-pill hover:bg-white/10 font-semibold text-white hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 border border-white/15 cursor-pointer"
             >
               <Briefcase className="w-5 h-5 text-gray-400" />
               Inspect Work
@@ -229,8 +229,8 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
 
           <div className="grid grid-cols-2 gap-3 max-w-2xl">
             {proofMetrics.map((stat) => (
-              <div key={stat.label} className="glass-card border-white/5 rounded-2xl p-3.5 hover:translate-y-[-2px] transition-transform">
-                <p className="text-xl md:text-2xl font-black font-display text-white">{stat.value}</p>
+              <div key={stat.label} className="glass-card border-white/5 rounded-2xl p-4 hover:translate-y-[-2px] transition-transform">
+                <p className="text-2xl md:text-3xl font-black font-display text-white">{stat.value}</p>
                 <p className="text-[10px] uppercase tracking-wider text-gray-300 mt-1 font-semibold">{stat.label}</p>
                 <p className="hidden xl:block text-[11px] text-gray-500 mt-1.5">{stat.detail}</p>
               </div>
@@ -243,9 +243,9 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/[0.04]">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-white/80" />
-                <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 text-xs font-mono text-gray-400">claude-code-workbench</span>
+                <span className="w-3 h-3 rounded-full bg-white/35" />
+                <span className="w-3 h-3 rounded-full bg-white/20" />
+                <span className="ml-2 text-xs font-mono text-gray-400">developer-control-surface</span>
               </div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-white bg-white/10 border border-white/20 px-2 py-1 rounded-full">ready</span>
             </div>
@@ -256,8 +256,8 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
                   <Terminal className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-display font-bold text-white">Agentic portfolio runtime</p>
-                  <p className="text-xs text-gray-500">Interactive resume, API sandbox, and systems proof</p>
+                  <p className="text-sm font-display font-bold text-white">Premium developer portfolio OS</p>
+                  <p className="text-xs text-gray-500">Proof, systems, credentials, and contact paths in one surface</p>
                 </div>
               </div>
 
@@ -297,7 +297,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
               </div>
 
               <div className="mt-4 flex items-center justify-between gap-4">
-                <div className="text-[10px] uppercase tracking-widest font-mono text-gray-500">Operator theme</div>
+                <div className="text-[10px] uppercase tracking-widest font-mono text-gray-500">Interface tone</div>
                 <div className="flex items-center gap-2.5 bg-white/5 border border-white/10 rounded-full p-1.5 backdrop-blur-md">
                   <button aria-label="Black theme" onClick={() => setActiveTheme('purple')} className={`w-5 h-5 rounded-full bg-neutral-100 border-2 cursor-pointer transition-transform ${activeTheme === 'purple' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
                   <button aria-label="Performance theme" onClick={() => setActiveTheme('emerald')} className={`w-5 h-5 rounded-full bg-neutral-300 border-2 cursor-pointer transition-transform ${activeTheme === 'emerald' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
@@ -309,8 +309,8 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
 
           <div className="absolute -right-4 -top-5 hidden sm:block glass-card rounded-2xl border-white/10 px-4 py-3 animate-float">
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-amber-300" />
-              <span className="text-xs font-mono text-gray-300">ship-ready UI</span>
+              <Zap className="w-4 h-4 text-white" />
+              <span className="text-xs font-mono text-gray-300">ship-ready system</span>
             </div>
           </div>
         </div>
