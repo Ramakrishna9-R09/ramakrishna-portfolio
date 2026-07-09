@@ -2,12 +2,21 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Venkata Ramakrishna Kamepalli | Software Engineer & GenAI/Agent Developer</title>
     <meta name="description" content="Portfolio of Venkata Ramakrishna Kamepalli - Integrated M.Tech Software Engineering student at VIT Chennai. Certified MongoDB Developer, Claude API and Agentic Systems Specialist." />
-    
+    <script>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      if (!location.hash || location.hash === '#hero') {
+        scrollTo(0, 0);
+        addEventListener('pageshow', function () { scrollTo(0, 0); }, { once: true });
+      }
+    </script>
+
     <!-- Google Fonts: Inter for UI, Outfit for Headings -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
