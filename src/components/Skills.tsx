@@ -15,9 +15,9 @@ function CircularProgress({ level, activeTheme }: { level: number; activeTheme: 
   const strokeDashoffset = circumference - (level / 100) * circumference;
 
   const themeColors = {
-    purple: { stroke: 'url(#skills-purple-grad)', text: 'text-purple-400', glow: 'rgba(168, 85, 247, 0.4)' },
-    emerald: { stroke: 'url(#skills-emerald-grad)', text: 'text-emerald-400', glow: 'rgba(16, 185, 129, 0.4)' },
-    indigo: { stroke: 'url(#skills-indigo-grad)', text: 'text-indigo-400', glow: 'rgba(99, 102, 241, 0.4)' }
+    purple: { stroke: 'url(#skills-purple-grad)', text: 'text-white', glow: 'rgba(255, 255, 255, 0.24)' },
+    emerald: { stroke: 'url(#skills-emerald-grad)', text: 'text-white', glow: 'rgba(185, 28, 28, 0.24)' },
+    indigo: { stroke: 'url(#skills-indigo-grad)', text: 'text-white', glow: 'rgba(244, 244, 245, 0.2)' }
   };
 
   const currentTheme = themeColors[activeTheme] || themeColors.purple;
@@ -27,16 +27,16 @@ function CircularProgress({ level, activeTheme }: { level: number; activeTheme: 
       <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
         <defs>
           <linearGradient id="skills-purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#c084fc" />
-            <stop offset="100%" stopColor="#6366f1" />
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#b91c1c" />
           </linearGradient>
           <linearGradient id="skills-emerald-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#34d399" />
-            <stop offset="100%" stopColor="#06b6d4" />
+            <stop offset="0%" stopColor="#f4f4f5" />
+            <stop offset="100%" stopColor="#dc2626" />
           </linearGradient>
           <linearGradient id="skills-indigo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#818cf8" />
-            <stop offset="100%" stopColor="#3b82f6" />
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#a1a1aa" />
           </linearGradient>
           <filter id="skills-glow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="3" result="blur" />

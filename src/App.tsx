@@ -89,15 +89,15 @@ export default function App() {
   };
 
   const themeGradients = {
-    purple: { color1: 'rgba(168, 85, 247, 0.12)', color2: 'rgba(99, 102, 241, 0.05)' },
-    emerald: { color1: 'rgba(16, 185, 129, 0.12)', color2: 'rgba(6, 182, 212, 0.05)' },
-    indigo: { color1: 'rgba(99, 102, 241, 0.12)', color2: 'rgba(59, 130, 246, 0.05)' }
+    purple: { color1: 'rgba(255, 255, 255, 0.09)', color2: 'rgba(185, 28, 28, 0.07)' },
+    emerald: { color1: 'rgba(244, 244, 245, 0.08)', color2: 'rgba(220, 38, 38, 0.06)' },
+    indigo: { color1: 'rgba(161, 161, 170, 0.08)', color2: 'rgba(255, 255, 255, 0.045)' }
   };
 
   const spotlightColors = {
-    purple: 'rgba(168, 85, 247, 0.06)',
-    emerald: 'rgba(16, 185, 129, 0.06)',
-    indigo: 'rgba(99, 102, 241, 0.06)'
+    purple: 'rgba(255, 255, 255, 0.055)',
+    emerald: 'rgba(185, 28, 28, 0.045)',
+    indigo: 'rgba(244, 244, 245, 0.04)'
   };
 
   return (
@@ -163,7 +163,7 @@ export default function App() {
 
       <button
         onClick={handleScrollToTop}
-        className={`fixed bottom-6 right-6 z-40 p-3 rounded-xl glass-pill border border-white/10 text-purple-400 hover:text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 ${
+        className={`fixed bottom-6 right-6 z-40 p-3 rounded-xl glass-pill border border-white/10 text-white/80 hover:text-white cursor-pointer transition-all duration-300 hover:scale-110 hover:-translate-y-1 ${
           showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         title="Scroll to Top"
@@ -172,12 +172,12 @@ export default function App() {
       </button>
 
       {/* Recruiter-Optimized Footer */}
-      <footer className="py-16 border-t border-white/5 bg-black/80 relative overflow-hidden">
+      <footer className="py-16 border-t border-white/10 bg-[#050505]/95 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[150px] purple-horizon-bottom opacity-50" />
         
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           {/* CTA Banner */}
-          <div className="text-center mb-12 p-8 rounded-3xl bg-gradient-to-br from-purple-500/10 via-indigo-500/5 to-transparent border border-purple-500/20">
+          <div className="text-center mb-12 p-8 rounded-3xl bg-white/[0.055] border border-white/15">
             <h3 className="font-display font-extrabold text-2xl md:text-3xl text-white mb-3">
               Ready to build something great together?
             </h3>
@@ -188,7 +188,7 @@ export default function App() {
               <a
                 href="./Ramakrishna.pdf"
                 target="_blank"
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-white to-neutral-200 hover:from-white hover:to-white text-black font-semibold shadow-lg shadow-white/10 hover:shadow-white/20 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Download className="w-5 h-5" />
                 Download Resume
@@ -207,7 +207,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h4 className="font-display font-bold text-lg text-white mb-2 flex items-center justify-center md:justify-start gap-2">
-                <span className="w-6 h-6 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-xs font-black shadow-lg">RK</span>
+                <span className="w-6 h-6 rounded-lg bg-white text-black flex items-center justify-center text-xs font-black shadow-lg shadow-white/10">RK</span>
                 Venkata Ramakrishna Kamepalli
               </h4>
               <p className="text-xs text-gray-500">

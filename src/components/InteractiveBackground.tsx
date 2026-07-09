@@ -62,9 +62,9 @@ export default function InteractiveBackground({ activeTheme = 'purple' }: Intera
     window.addEventListener('mouseleave', handleMouseLeave);
 
     const getThemeColor = (alpha: number) => {
-      if (activeTheme === 'emerald') return `rgba(16, 185, 129, ${alpha})`;
-      if (activeTheme === 'indigo') return `rgba(99, 102, 241, ${alpha})`;
-      return `rgba(168, 85, 247, ${alpha})`; // purple
+      if (activeTheme === 'emerald') return `rgba(185, 28, 28, ${alpha})`;
+      if (activeTheme === 'indigo') return `rgba(244, 244, 245, ${alpha})`;
+      return `rgba(255, 255, 255, ${alpha})`;
     };
 
     const gap = 52; // density of warp grid

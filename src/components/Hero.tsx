@@ -88,20 +88,20 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
       badge: 'bg-white/10 text-white border-white/20',
     },
     emerald: {
-      pillBorder: 'border-emerald-500/20 text-emerald-300',
-      pillBot: 'text-emerald-400',
-      glowClass: 'purple-horizon bg-emerald-500/25',
-      buttonClass: 'from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-emerald-500/20 hover:shadow-emerald-500/40',
-      widgetClass: 'bg-emerald-500/10 text-emerald-400',
-      badge: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+      pillBorder: 'border-white/15 text-white/80',
+      pillBot: 'text-red-300',
+      glowClass: 'purple-horizon',
+      buttonClass: 'from-white to-neutral-200 hover:from-white hover:to-white text-black shadow-white/10 hover:shadow-white/20',
+      widgetClass: 'bg-white/10 text-white',
+      badge: 'bg-white/10 text-white border-white/20',
     },
     indigo: {
-      pillBorder: 'border-indigo-500/20 text-indigo-300',
-      pillBot: 'text-indigo-400',
-      glowClass: 'purple-horizon bg-indigo-500/25',
-      buttonClass: 'from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 shadow-indigo-500/20 hover:shadow-indigo-500/40',
-      widgetClass: 'bg-indigo-500/10 text-indigo-400',
-      badge: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+      pillBorder: 'border-white/15 text-white/80',
+      pillBot: 'text-red-300',
+      glowClass: 'purple-horizon',
+      buttonClass: 'from-white to-neutral-200 hover:from-white hover:to-white text-black shadow-white/10 hover:shadow-white/20',
+      widgetClass: 'bg-white/10 text-white',
+      badge: 'bg-white/10 text-white border-white/20',
     },
   };
 
@@ -135,10 +135,10 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
           style={{
             background:
               activeTheme === 'emerald'
-                ? 'radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.02) 50%, rgba(3, 3, 3, 0) 100%)'
+                ? 'radial-gradient(ellipse at 50% 30%, rgba(185, 28, 28, 0.12) 0%, rgba(255, 255, 255, 0.025) 50%, rgba(3, 3, 3, 0) 100%)'
                 : activeTheme === 'indigo'
-                  ? 'radial-gradient(ellipse at 50% 30%, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.02) 50%, rgba(3, 3, 3, 0) 100%)'
-                  : 'radial-gradient(ellipse at 50% 30%, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.02) 50%, rgba(3, 3, 3, 0) 100%)',
+                  ? 'radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.10) 0%, rgba(161, 161, 170, 0.025) 50%, rgba(3, 3, 3, 0) 100%)'
+                  : 'radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.12) 0%, rgba(185, 28, 28, 0.025) 50%, rgba(3, 3, 3, 0) 100%)',
             filter: 'blur(80px)',
           }}
         />
@@ -264,10 +264,10 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
               <div className="space-y-2.5 font-mono text-[11px]">
                 {commandFeed.map((line) => (
                   <div key={line.prompt} className="rounded-2xl bg-white/[0.035] border border-white/[0.06] p-3">
-                    <p className="text-purple-300">
+                    <p className="text-white/85">
                       <span className="text-gray-500">$</span> {line.prompt}
                     </p>
-                    <p className="mt-2 text-emerald-300 flex items-center gap-2">
+                    <p className="mt-2 text-red-100 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4" />
                       {line.result}
                     </p>

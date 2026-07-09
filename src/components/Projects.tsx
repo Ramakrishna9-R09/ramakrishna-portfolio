@@ -122,7 +122,7 @@ export default function Projects() {
               key={idx}
               onMouseMove={handleMouseMove}
               style={{
-                background: 'radial-gradient(350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(168, 85, 247, 0.08), transparent), rgba(255, 255, 255, 0.02)'
+                background: 'radial-gradient(350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(255, 255, 255, 0.09), rgba(185, 28, 28, 0.025), transparent), rgba(255, 255, 255, 0.02)'
               }}
               className={`glass-card border-white/5 rounded-3xl p-6 flex flex-col justify-between hover:scale-[1.01] transition-transform duration-300 relative group overflow-hidden ${idx === 0 ? 'md:col-span-2 lg:grid lg:grid-cols-[1fr_0.72fr] lg:gap-8' : ''}`}
             >

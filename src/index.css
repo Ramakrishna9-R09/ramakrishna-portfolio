@@ -202,13 +202,13 @@ body {
 }
 
 .purple-beam {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(168, 85, 247, 0.7), rgba(99, 102, 241, 0.15), transparent);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(185, 28, 28, 0.42), rgba(255, 255, 255, 0.12), transparent);
   filter: blur(1px);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 30px rgba(185, 28, 28, 0.28);
 }
 
 .purple-flare {
-  background: radial-gradient(circle at center, #fff 0%, rgba(168, 85, 247, 0.6) 20%, transparent 60%);
+  background: radial-gradient(circle at center, #fff 0%, rgba(185, 28, 28, 0.38) 20%, transparent 60%);
   filter: blur(15px);
   pointer-events: none;
 }
@@ -285,10 +285,10 @@ body {
 
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(168, 85, 247, 0.2), inset 0 0 5px rgba(168, 85, 247, 0.1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.14), inset 0 0 5px rgba(185, 28, 28, 0.08);
   }
   50% {
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5), inset 0 0 10px rgba(168, 85, 247, 0.25);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.28), inset 0 0 10px rgba(185, 28, 28, 0.18);
   }
 }
 
@@ -611,4 +611,166 @@ button.fixed.bottom-6.right-6 svg,
   border-radius: 10px !important;
   background: rgba(255, 255, 255, 0.08) !important;
   border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Tesla mode hard reset: keep every panel on black, graphite, white, and red. */
+body [class*="text-purple"],
+body [class*="text-indigo"],
+body [class*="text-blue"],
+body [class*="text-cyan"],
+body [class*="text-teal"],
+body [class*="text-emerald"],
+body [class*="text-green"],
+body [class*="text-amber"],
+body [class*="text-orange"],
+body [class*="text-pink"],
+body [class*="text-violet"] {
+  color: #f4f4f5 !important;
+}
+
+body [class*="hover:text-purple"]:hover,
+body [class*="hover:text-indigo"]:hover,
+body [class*="hover:text-blue"]:hover,
+body [class*="hover:text-cyan"]:hover,
+body [class*="hover:text-teal"]:hover,
+body [class*="hover:text-emerald"]:hover,
+body [class*="hover:text-green"]:hover,
+body [class*="hover:text-amber"]:hover,
+body [class*="hover:text-orange"]:hover,
+body [class*="hover:text-pink"]:hover,
+body [class*="hover:text-violet"]:hover {
+  color: #ffffff !important;
+}
+
+body [class*="border-purple"],
+body [class*="border-indigo"],
+body [class*="border-blue"],
+body [class*="border-cyan"],
+body [class*="border-teal"],
+body [class*="border-emerald"],
+body [class*="border-green"],
+body [class*="border-amber"],
+body [class*="border-orange"],
+body [class*="border-pink"],
+body [class*="border-violet"] {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+body [class*="hover:border-purple"]:hover,
+body [class*="hover:border-indigo"]:hover,
+body [class*="hover:border-blue"]:hover,
+body [class*="hover:border-cyan"]:hover,
+body [class*="hover:border-teal"]:hover,
+body [class*="hover:border-emerald"]:hover,
+body [class*="hover:border-green"]:hover,
+body [class*="hover:border-amber"]:hover,
+body [class*="hover:border-orange"]:hover,
+body [class*="hover:border-pink"]:hover,
+body [class*="hover:border-violet"]:hover {
+  border-color: rgba(255, 255, 255, 0.34) !important;
+}
+
+body [class*="bg-purple"],
+body [class*="bg-indigo"],
+body [class*="bg-blue"],
+body [class*="bg-cyan"],
+body [class*="bg-teal"],
+body [class*="bg-emerald"],
+body [class*="bg-green"],
+body [class*="bg-amber"],
+body [class*="bg-orange"],
+body [class*="bg-pink"],
+body [class*="bg-violet"] {
+  background-color: rgba(255, 255, 255, 0.085) !important;
+  background-image: none !important;
+}
+
+body [class*="from-purple"],
+body [class*="from-indigo"],
+body [class*="from-blue"],
+body [class*="from-cyan"],
+body [class*="from-teal"],
+body [class*="from-emerald"],
+body [class*="from-green"],
+body [class*="from-amber"],
+body [class*="from-orange"],
+body [class*="from-pink"],
+body [class*="from-violet"],
+body [class*="via-purple"],
+body [class*="via-indigo"],
+body [class*="via-blue"],
+body [class*="via-cyan"],
+body [class*="via-teal"],
+body [class*="via-emerald"],
+body [class*="via-green"],
+body [class*="via-amber"],
+body [class*="via-orange"],
+body [class*="via-pink"],
+body [class*="via-violet"],
+body [class*="to-purple"],
+body [class*="to-indigo"],
+body [class*="to-blue"],
+body [class*="to-cyan"],
+body [class*="to-teal"],
+body [class*="to-emerald"],
+body [class*="to-green"],
+body [class*="to-amber"],
+body [class*="to-orange"],
+body [class*="to-pink"],
+body [class*="to-violet"] {
+  --tw-gradient-from: #ffffff var(--tw-gradient-from-position) !important;
+  --tw-gradient-via: #f4f4f5 var(--tw-gradient-via-position) !important;
+  --tw-gradient-to: #b91c1c var(--tw-gradient-to-position) !important;
+}
+
+body button[class*="bg-purple"],
+body button[class*="bg-indigo"],
+body button[class*="bg-blue"],
+body button[class*="bg-cyan"],
+body button[class*="bg-teal"],
+body button[class*="bg-emerald"],
+body button[class*="bg-green"],
+body button[class*="bg-amber"],
+body button[class*="bg-orange"],
+body button[class*="bg-pink"],
+body button[class*="bg-violet"],
+body a[class*="from-purple"],
+body a[class*="from-indigo"],
+body a[class*="from-blue"],
+body a[class*="from-cyan"],
+body a[class*="from-teal"],
+body a[class*="from-emerald"],
+body a[class*="from-green"],
+body a[class*="from-amber"],
+body a[class*="from-orange"],
+body a[class*="from-pink"],
+body a[class*="from-violet"] {
+  background: linear-gradient(180deg, #ffffff, #e7e7e7) !important;
+  color: #050505 !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 20px 55px rgba(255, 255, 255, 0.08) !important;
+}
+
+body [class*="shadow-purple"],
+body [class*="shadow-indigo"],
+body [class*="shadow-blue"],
+body [class*="shadow-cyan"],
+body [class*="shadow-teal"],
+body [class*="shadow-emerald"],
+body [class*="shadow-green"],
+body [class*="shadow-amber"],
+body [class*="shadow-orange"],
+body [class*="shadow-pink"],
+body [class*="shadow-violet"] {
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34) !important;
+}
+
+body input,
+body textarea,
+body select {
+  accent-color: #b91c1c;
+}
+
+body input[type="range"] {
+  accent-color: #f4f4f5;
 }
