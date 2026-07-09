@@ -8,13 +8,26 @@
     <title>Venkata Ramakrishna Kamepalli | Software Engineer & GenAI/Agent Developer</title>
     <meta name="description" content="Portfolio of Venkata Ramakrishna Kamepalli - Integrated M.Tech Software Engineering student at VIT Chennai. Certified MongoDB Developer, Claude API and Agentic Systems Specialist." />
     <script>
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-      if (!location.hash || location.hash === '#hero') {
-        scrollTo(0, 0);
-        addEventListener('pageshow', function () { scrollTo(0, 0); }, { once: true });
-      }
+      (function () {
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+
+        var shouldStartAtHero = !location.hash || location.hash === '#hero';
+        if (!shouldStartAtHero) return;
+
+        function resetScroll() {
+          scrollTo(0, 0);
+        }
+
+        resetScroll();
+        addEventListener('pageshow', resetScroll);
+        addEventListener('DOMContentLoaded', resetScroll);
+        addEventListener('load', resetScroll);
+        [0, 50, 150, 400, 900, 1500].forEach(function (delay) {
+          setTimeout(resetScroll, delay);
+        });
+      })();
     </script>
 
     <!-- Google Fonts: Inter for UI, Outfit for Headings -->
