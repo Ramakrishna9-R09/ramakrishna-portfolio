@@ -88,12 +88,6 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const themeColors = {
-    purple: 'from-purple-500 via-pink-500 to-indigo-500',
-    emerald: 'from-emerald-500 via-teal-500 to-cyan-500',
-    indigo: 'from-indigo-500 via-blue-500 to-sky-500'
-  };
-
   const themeGradients = {
     purple: { color1: 'rgba(168, 85, 247, 0.12)', color2: 'rgba(99, 102, 241, 0.05)' },
     emerald: { color1: 'rgba(16, 185, 129, 0.12)', color2: 'rgba(6, 182, 212, 0.05)' },
@@ -109,20 +103,21 @@ export default function App() {
   return (
     <EditModeProvider>
     <div 
-      className="min-h-screen bg-[#030303] text-white selection:bg-purple-500/30 selection:text-purple-200 antialiased font-sans relative overflow-x-hidden"
+      className="premium-shell min-h-screen text-white selection:bg-red-500/30 selection:text-white antialiased font-sans relative overflow-x-hidden"
       style={{ '--spotlight-color': spotlightColors[activeTheme] } as React.CSSProperties}
     >
+      <div className="automotive-background" />
       <div className="noise-overlay" />
       <div className="spotlight-glow" />
       <div className="spotlight-grid" />
       <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 pointer-events-none z-10 border-x border-white/[0.015]" />
 
       <div className="ambient-glow-container">
-        <div className="ambient-glow-1 transition-all duration-1000" style={{ background: `radial-gradient(circle, ${themeGradients[activeTheme].color1} 0%, rgba(3, 3, 3, 0) 70%)` }} />
-        <div className="ambient-glow-2 transition-all duration-1000" style={{ background: `radial-gradient(circle, ${themeGradients[activeTheme].color2} 0%, rgba(3, 3, 3, 0) 70%)` }} />
+        <div className="ambient-glow-1 transition-all duration-1000" style={{ background: `radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, ${themeGradients[activeTheme].color1} 28%, rgba(3, 3, 3, 0) 72%)` }} />
+        <div className="ambient-glow-2 transition-all duration-1000" style={{ background: `radial-gradient(circle, rgba(185, 28, 28, 0.11) 0%, ${themeGradients[activeTheme].color2} 36%, rgba(3, 3, 3, 0) 72%)` }} />
       </div>
 
-      <div className={`fixed top-0 left-0 h-[3px] bg-gradient-to-r ${themeColors[activeTheme]} z-50 transition-all duration-300`} style={{ width: `${scrollProgress}%` }} />
+      <div className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-white via-red-500 to-white z-50 transition-all duration-300" style={{ width: `${scrollProgress}%` }} />
 
       <Navbar activeSection={activeSection} activeTheme={activeTheme} />
       <PerformanceMonitor />

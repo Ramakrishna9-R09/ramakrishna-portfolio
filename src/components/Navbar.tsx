@@ -53,25 +53,25 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
 
   const themeLogoStyles = {
     purple: {
-      bg: 'from-purple-600 to-indigo-600 shadow-purple-500/20',
-      textGrad: 'from-white via-white to-purple-400',
-      icon: 'text-purple-400',
-      activeTab: 'bg-purple-600 text-white shadow-lg shadow-purple-500/25',
-      mobileActiveTab: 'bg-purple-600/20 text-purple-300 border-l-2 border-purple-500 pl-4'
+      bg: 'from-white to-neutral-300 shadow-white/10 text-black',
+      textGrad: 'from-white via-white to-neutral-300',
+      icon: 'text-red-300',
+      activeTab: 'bg-white text-black shadow-lg shadow-white/10',
+      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-red-500 pl-4'
     },
     emerald: {
-      bg: 'from-emerald-600 to-teal-600 shadow-emerald-500/20',
-      textGrad: 'from-white via-white to-emerald-400',
-      icon: 'text-emerald-400',
-      activeTab: 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25',
-      mobileActiveTab: 'bg-emerald-600/20 text-emerald-300 border-l-2 border-emerald-500 pl-4'
+      bg: 'from-red-600 to-red-800 shadow-red-500/20',
+      textGrad: 'from-white via-white to-red-200',
+      icon: 'text-red-300',
+      activeTab: 'bg-white text-black shadow-lg shadow-white/10',
+      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-red-500 pl-4'
     },
     indigo: {
-      bg: 'from-indigo-600 to-blue-600 shadow-indigo-500/20',
-      textGrad: 'from-white via-white to-indigo-400',
-      icon: 'text-indigo-400',
-      activeTab: 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25',
-      mobileActiveTab: 'bg-indigo-600/20 text-indigo-300 border-l-2 border-indigo-500 pl-4'
+      bg: 'from-neutral-700 to-neutral-950 shadow-white/10',
+      textGrad: 'from-white via-white to-neutral-400',
+      icon: 'text-red-300',
+      activeTab: 'bg-white text-black shadow-lg shadow-white/10',
+      mobileActiveTab: 'bg-white/10 text-white border-l-2 border-red-500 pl-4'
     }
   };
 
@@ -81,7 +81,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'py-4 bg-black/60 backdrop-blur-md border-b border-white/5' 
+          ? 'py-4 bg-black/70 backdrop-blur-xl border-b border-white/10' 
           : 'py-6 bg-transparent border-b border-transparent'
       }`}
     >
@@ -101,7 +101,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
         </a>
 
         {/* Desktop Nav Items */}
-        <div className="hidden lg:flex items-center gap-1 bg-white/5 border border-white/5 rounded-full p-1.5 backdrop-blur-md">
+        <div className="hidden lg:flex items-center gap-1 bg-white/[0.08] border border-white/10 rounded-md p-1.5 backdrop-blur-xl">
           {navItems.map((item) => (
             <a
               key={item.id}
@@ -110,7 +110,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center ${
                 activeSection === item.id
                   ? currentStyle.activeTab
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  : 'text-gray-300 hover:text-white hover:bg-white/10'
               }`}
             >
               {item.name}
@@ -148,7 +148,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
           <a
             href="./Ramakrishna.pdf"
             target="_blank"
-            className="glass-pill px-4 py-2 rounded-full text-xs font-semibold text-white flex items-center gap-2 hover:scale-105"
+            className="glass-pill px-4 py-2 rounded-md text-xs font-semibold text-white flex items-center gap-2 hover:scale-105"
           >
             <FileText className={`w-4 h-4 ${currentStyle.icon}`} />
             Resume PDF
@@ -160,7 +160,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
           <a
             href="./Ramakrishna.pdf"
             target="_blank"
-            className="glass-pill px-3 py-1.5 rounded-full text-[11px] font-semibold text-white flex items-center gap-1.5 hover:scale-105"
+            className="glass-pill px-3 py-1.5 rounded-md text-[11px] font-semibold text-white flex items-center gap-1.5 hover:scale-105"
           >
             <FileText className={`w-3.5 h-3.5 ${currentStyle.icon}`} />
             Resume
