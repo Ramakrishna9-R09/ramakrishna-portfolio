@@ -62,10 +62,10 @@ export default function PerformanceMonitor() {
 
   return (
     <>
-      {/* Floating HUD toggle button (Top Left) */}
+      {/* Floating HUD toggle button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-6 z-50 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/30 text-gray-300 hover:text-white cursor-pointer backdrop-blur-md transition-all duration-300 flex items-center gap-1.5 text-[11px] font-mono hover:scale-105"
+        className="hidden sm:flex fixed top-24 right-6 z-40 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-500/30 text-gray-300 hover:text-white cursor-pointer backdrop-blur-md transition-all duration-300 items-center gap-1.5 text-[11px] font-mono hover:scale-105"
       >
         <Gauge className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
         <span>Telemetry HUD</span>
@@ -73,8 +73,8 @@ export default function PerformanceMonitor() {
 
       {/* Slide-out Telemetry Panel */}
       <div
-        className={`fixed top-16 left-6 w-[280px] z-50 glass-card border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 font-mono text-xs ${
-          isOpen ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-10 scale-95 pointer-events-none'
+        className={`hidden sm:block fixed top-36 right-6 w-[280px] z-50 glass-card border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 font-mono text-xs ${
+          isOpen ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95 pointer-events-none'
         }`}
       >
         {/* Header */}

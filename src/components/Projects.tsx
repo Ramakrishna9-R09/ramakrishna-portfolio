@@ -1,5 +1,5 @@
 import { useState, useEffect, type MouseEvent } from 'react';
-import { Folder, ArrowRight, X, Sparkles, Layers, Calendar, Cpu, Shield, Database, Layout, Play } from 'lucide-react';
+import { Folder, ArrowRight, X, Sparkles, Layers, Calendar, Cpu, Shield, Database, Layout, Play, Gauge, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { getProjectsData, saveData } from '../data/resumeData';
 import type { ResumeProject } from '../data/resumeData';
 import { useEditMode } from '../context/EditModeContext';
@@ -84,11 +84,15 @@ export default function Projects() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-300 text-[10px] font-mono uppercase tracking-[0.2em] mb-4">
+            <Sparkles className="w-3.5 h-3.5" />
+            Production Proof
+          </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Engineering Showcases
+            Engineering Case Studies
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-            A selection of production-grade systems built during Integrated M.Tech studies, emphasizing backend optimization, Cloud, IoT, and AI agents.
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+            Four shipped systems, each framed around architecture, measurable impact, and the parts a hiring manager actually needs to evaluate.
           </p>
         </div>
 
@@ -120,12 +124,20 @@ export default function Projects() {
               style={{
                 background: 'radial-gradient(350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(168, 85, 247, 0.08), transparent), rgba(255, 255, 255, 0.02)'
               }}
-              className="glass-card border-white/5 rounded-3xl p-6 flex flex-col justify-between hover:scale-[1.01] transition-transform duration-300 relative group overflow-hidden"
+              className={`glass-card border-white/5 rounded-3xl p-6 flex flex-col justify-between hover:scale-[1.01] transition-transform duration-300 relative group overflow-hidden ${idx === 0 ? 'md:col-span-2 lg:grid lg:grid-cols-[1fr_0.72fr] lg:gap-8' : ''}`}
             >
               <div>
-                <div className="flex justify-between items-center mb-6">
-                  <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                    <Folder className="w-5 h-5" />
+                <div className="flex justify-between items-start mb-6 gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                      <Folder className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-purple-300 font-mono">
+                        Case Study 0{idx + 1}
+                      </span>
+                      <p className="text-[11px] text-gray-500 mt-1">Architecture, metrics, source</p>
+                    </div>
                   </div>
                   <div className="flex items-center gap-2">
                     {isEditMode && (
@@ -138,8 +150,8 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <EditableText value={project.title} onChange={(v) => updateProject(idx, 'title', v)} className="font-display font-extrabold text-2xl text-white group-hover:text-purple-300 transition-colors mb-2" tag="h3" />
-                <EditableText value={project.subtitle} onChange={(v) => updateProject(idx, 'subtitle', v)} className="text-gray-400 text-sm mb-6 leading-relaxed" tag="p" />
+                <EditableText value={project.title} onChange={(v) => updateProject(idx, 'title', v)} className="font-display font-extrabold text-2xl md:text-3xl text-white group-hover:text-purple-300 transition-colors mb-2" tag="h3" />
+                <EditableText value={project.subtitle} onChange={(v) => updateProject(idx, 'subtitle', v)} className="text-gray-400 text-sm md:text-base mb-6 leading-relaxed max-w-2xl" tag="p" />
 
                 <div className="flex flex-wrap gap-1.5 mb-6">
                   {project.technologies.slice(0, 4).map((tech) => (
@@ -174,9 +186,19 @@ export default function Projects() {
                     </div>
                   ))}
                 </div>
+
+                <div className="mb-6 rounded-2xl bg-black/35 border border-white/5 p-4">
+                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-gray-500 font-mono mb-3">
+                    <Gauge className="w-3.5 h-3.5 text-purple-400" />
+                    System Summary
+                  </div>
+                  <p className="text-xs md:text-sm text-gray-400 leading-relaxed line-clamp-3">
+                    {project.architectureDetails}
+                  </p>
+                </div>
               </div>
 
-              <div className="flex gap-3 pt-4 border-t border-white/5">
+              <div className="flex gap-3 pt-4 border-t border-white/5 self-end w-full">
                 <button
                   onClick={() => setActiveProject(project)}
                   className="flex-1 px-5 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-xs font-semibold text-white transition-all cursor-pointer flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-purple-500/15"
@@ -191,10 +213,7 @@ export default function Projects() {
                   className="p-3 rounded-xl glass-pill border border-white/10 text-gray-300 hover:text-white flex items-center justify-center hover:scale-105"
                   title="Source Code"
                 >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                    <path d="M9 18c-4.51 2-5-2-7-2" />
-                  </svg>
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -217,6 +236,15 @@ export default function Projects() {
 
                 <EditableText value={activeProject.title} onChange={(v) => updateProject(projectsData.indexOf(activeProject), 'title', v)} className="font-display font-black text-3xl text-white mb-2" tag="h3" />
                 <EditableText value={activeProject.subtitle} onChange={(v) => updateProject(projectsData.indexOf(activeProject), 'subtitle', v)} className="text-purple-400 text-sm font-semibold mb-6" tag="p" />
+
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  {activeProject.metrics.map((metric) => (
+                    <div key={`${metric.label}-${metric.value}`} className="rounded-2xl border border-white/5 bg-white/[0.03] p-3 text-center">
+                      <p className="text-lg font-black text-white font-display">{metric.value}</p>
+                      <p className="text-[9px] uppercase tracking-wider text-gray-500">{metric.label}</p>
+                    </div>
+                  ))}
+                </div>
 
                 <div className="mb-8 p-5 rounded-2xl bg-white/[0.01] border border-white/10">
                   <h4 className="font-display font-bold text-xs text-gray-400 uppercase tracking-wider mb-5 flex items-center gap-1.5">
@@ -249,6 +277,15 @@ export default function Projects() {
                     itemClass="flex items-start gap-3 text-xs md:text-sm text-gray-300"
                     bullet="✓"
                   />
+                </div>
+
+                <div className="mb-8 p-5 rounded-2xl bg-emerald-500/[0.04] border border-emerald-500/15">
+                  <h4 className="font-display font-bold text-sm text-gray-300 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Recruiter Signal
+                  </h4>
+                  <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+                    This project demonstrates implementation ownership across architecture, testing, performance tuning, and source-control discipline rather than only UI presentation.
+                  </p>
                 </div>
 
                 <div className="mb-8 p-5 rounded-2xl bg-white/[0.02] border border-white/5">
