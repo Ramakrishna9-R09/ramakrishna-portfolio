@@ -86,13 +86,13 @@ export default function Projects() {
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-300 text-[10px] font-mono uppercase tracking-[0.2em] mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            Production Proof
+            Production Evidence
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Engineering Case Studies
+            AI Engineering Case Studies
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-            Four shipped systems, each framed around architecture, measurable impact, and the parts a hiring manager actually needs to evaluate.
+            Shipped systems framed around architecture, measurable impact, implementation ownership, and the source paths a hiring manager can inspect.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export default function Projects() {
                       <span className="text-[10px] uppercase tracking-[0.2em] text-purple-300 font-mono">
                         Case Study 0{idx + 1}
                       </span>
-                      <p className="text-[11px] text-gray-500 mt-1">Architecture, metrics, source</p>
+                      <p className="text-[11px] text-gray-500 mt-1">Architecture, metrics, source, ownership</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">

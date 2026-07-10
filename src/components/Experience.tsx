@@ -57,10 +57,10 @@ export default function Experience() {
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Career Goals & Experience
+            Career Signal
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-            Currently seeking full-time Software Engineering roles. Open to opportunities in backend, cloud, and AI/ML engineering.
+            Availability, focus areas, and hiring-ready proof points for backend, cloud, full-stack, and AI engineering teams.
           </p>
         </div>
 
@@ -71,8 +71,8 @@ export default function Experience() {
               <Briefcase className="w-7 h-7 text-emerald-400" />
             </div>
             <div>
-              <h3 className="font-display font-bold text-lg text-white">Available for Full-Time Roles</h3>
-              <p className="text-sm text-gray-400">Graduating 2027 | Open to relocation</p>
+              <h3 className="font-display font-bold text-lg text-white">Available for High-Ownership Engineering Roles</h3>
+              <p className="text-sm text-gray-400">Graduating 2027 | Backend, Cloud, AI Systems, Full-Stack</p>
             </div>
           </div>
           <div className="flex items-center gap-2">

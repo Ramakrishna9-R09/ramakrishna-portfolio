@@ -581,13 +581,13 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
         {/* Section Header */}
         <div className="text-center mb-16 select-none">
           <span className={`text-[10px] uppercase font-mono px-3 py-1 rounded-full font-bold border ${getThemeHighlight()}`}>
-            Under The Hood
+            System Design Lab
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mt-4 mb-4 font-display text-white">
-            Architecture & API Sandbox
+            Production AI Systems Sandbox
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-            Inspect the complete backend pipeline orchestrating Kamepalli's developer portfolio. Query mock endpoints, analyze embeddings similarity distance, and explore rate limiter microservice setups in real time.
+            Inspect backend pipelines, API boundaries, vector search behavior, rate-limit controls, and portfolio intelligence flows in one interactive lab.
           </p>
         </div>
 
@@ -643,10 +643,10 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                     {/* UI Client Node */}
                     <button
                       onClick={() => setSelectedTier('client')}
-                      className={`flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
+                      className={`architecture-node flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
                         selectedTier === 'client'
-                          ? `bg-purple-600/10 border-purple-500 scale-[1.05] shadow-lg shadow-purple-500/10`
-                          : 'bg-white/[0.02] border-white/5 hover:border-white/15'
+                          ? 'architecture-node-active scale-[1.05]'
+                          : 'architecture-node-idle'
                       }`}
                     >
                       <div className="p-2 rounded-xl bg-purple-500/10 text-purple-400 mb-2">
@@ -659,10 +659,10 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                     {/* Edge Gateway Node */}
                     <button
                       onClick={() => setSelectedTier('gateway')}
-                      className={`flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
+                      className={`architecture-node flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
                         selectedTier === 'gateway'
-                          ? `bg-purple-600/10 border-purple-500 scale-[1.05] shadow-lg shadow-purple-500/10`
-                          : 'bg-white/[0.02] border-white/5 hover:border-white/15'
+                          ? 'architecture-node-active scale-[1.05]'
+                          : 'architecture-node-idle'
                       }`}
                     >
                       <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-400 mb-2">
@@ -688,10 +688,10 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                     {/* Redis Cache Node */}
                     <button
                       onClick={() => setSelectedTier('cache')}
-                      className={`flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
+                      className={`architecture-node flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
                         selectedTier === 'cache'
-                          ? `bg-purple-600/10 border-purple-500 scale-[1.05] shadow-lg shadow-purple-500/10`
-                          : 'bg-white/[0.02] border-white/5 hover:border-white/15'
+                          ? 'architecture-node-active scale-[1.05]'
+                          : 'architecture-node-idle'
                       }`}
                     >
                       <div className="p-2 rounded-xl bg-white/10 text-white mb-2">
@@ -704,10 +704,10 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                     {/* Vector DB Node */}
                     <button
                       onClick={() => setSelectedTier('vectordb')}
-                      className={`flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
+                      className={`architecture-node flex flex-col items-center p-3 rounded-2xl border text-center transition-all cursor-pointer min-w-[120px] max-w-[140px] relative ${
                         selectedTier === 'vectordb'
-                          ? `bg-purple-600/10 border-purple-500 scale-[1.05] shadow-lg shadow-purple-500/10`
-                          : 'bg-white/[0.02] border-white/5 hover:border-white/15'
+                          ? 'architecture-node-active scale-[1.05]'
+                          : 'architecture-node-idle'
                       }`}
                     >
                       <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 mb-2">
@@ -727,10 +727,10 @@ export default function ArchitectureExplorer({ activeTheme = 'purple' }: { activ
                   <div className="w-full flex justify-center pb-2">
                     <button
                       onClick={() => setSelectedTier('llm')}
-                      className={`flex flex-col items-center p-3.5 rounded-2xl border text-center transition-all cursor-pointer w-[150px] relative ${
+                      className={`architecture-node flex flex-col items-center p-3.5 rounded-2xl border text-center transition-all cursor-pointer w-[150px] relative ${
                         selectedTier === 'llm'
-                          ? `bg-purple-600/10 border-purple-500 scale-[1.05] shadow-lg shadow-purple-500/10`
-                          : 'bg-white/[0.02] border-white/5 hover:border-white/15'
+                          ? 'architecture-node-active scale-[1.05]'
+                          : 'architecture-node-idle'
                       }`}
                     >
                       <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 mb-2">

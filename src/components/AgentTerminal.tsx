@@ -310,10 +310,10 @@ export default function AgentTerminal() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Simulated Agentic Client CLI
+            Agentic Resume Intelligence CLI
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-            Type custom RAG questions or trigger JSON-RPC tool schemas. Experience how certified Model Context Protocol (MCP) agents index, call, and verify data.
+            A live command surface for RAG queries, JSON-RPC tool schemas, credential checks, and MCP-style agent workflows.
           </p>
         </div>
 

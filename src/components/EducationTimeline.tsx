@@ -51,10 +51,10 @@ export default function EducationTimeline() {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Academic Timeline
+            Academic Signal
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-            Professional education history, outlining academic tracks and major test scores.
+            Formal software engineering foundation, performance record, and academic context behind the engineering portfolio.
           </p>
         </div>
 

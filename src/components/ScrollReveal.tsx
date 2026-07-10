@@ -45,8 +45,8 @@ export default function ScrollReveal({ children, delay = 0 }: ScrollRevealProps)
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+      className={`transition-opacity duration-700 cubic-bezier(0.16, 1, 0.3, 1) ${
+        isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
       {children}

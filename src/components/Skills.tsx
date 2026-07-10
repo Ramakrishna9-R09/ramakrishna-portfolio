@@ -130,10 +130,10 @@ export default function Skills({ activeTheme = 'purple' }: SkillsProps) {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Technical Arsenal
+            Engineering Capability Matrix
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-            Hover over categories and click on individual skills to inspect proficiency levels, descriptions, and projects where they were utilized.
+            A focused map of the systems, cloud, data, and agentic AI capabilities used across production-grade projects.
           </p>
         </div>
 

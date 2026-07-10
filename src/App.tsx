@@ -13,7 +13,6 @@ import PerformanceMonitor from './components/PerformanceMonitor';
 import AIAssistant from './components/AIAssistant';
 import ArchitectureExplorer from './components/ArchitectureExplorer';
 import { EditModeProvider } from './context/EditModeContext';
-import EditToggle from './components/EditToggle';
 import { ArrowUp, Mail, Download } from 'lucide-react';
 
 export default function App() {
@@ -159,7 +158,6 @@ export default function App() {
       </main>
 
       <AIAssistant />
-      <EditToggle />
 
       <button
         onClick={handleScrollToTop}

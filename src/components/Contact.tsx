@@ -61,10 +61,10 @@ export default function Contact({ activeTheme = 'purple' }: ContactProps) {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Get In Touch
+            Start a Conversation
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-            Reach out via phone, email, or send a message below to connect regarding career opportunities, projects, or collaborations.
+            Direct contact paths for software engineering roles, AI systems work, backend opportunities, and technical collaborations.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export default function Contact({ activeTheme = 'purple' }: ContactProps) {
 
           <div className="lg:col-span-7 glass-card border-white/5 rounded-3xl p-6 md:p-8">
             <h3 className="font-display font-extrabold text-xl md:text-2xl text-white mb-6">
-              Write a Message
+              Send a Role or Collaboration Note
             </h3>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">

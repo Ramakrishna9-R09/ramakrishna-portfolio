@@ -1,5 +1,6 @@
 import { useState, useEffect, type MouseEvent } from 'react';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, FileText, Pencil, Check } from 'lucide-react';
+import { useEditMode } from '../context/EditModeContext';
 
 interface NavbarProps {
   activeSection: string;
@@ -9,6 +10,7 @@ interface NavbarProps {
 export default function Navbar({ activeSection, activeTheme = 'purple' }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { isEditMode, setIsEditMode } = useEditMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +87,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
           : 'py-6 bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center gap-4">
         {/* Brand */}
         <a 
           href="#hero" 
@@ -95,7 +97,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
           <span className={`w-8 h-8 rounded-lg bg-gradient-to-tr ${currentStyle.bg} flex items-center justify-center text-sm font-black shadow-lg group-hover:scale-105 transition-transform`}>
             RK
           </span>
-          <span className={`bg-gradient-to-r ${currentStyle.textGrad} bg-clip-text text-transparent group-hover:opacity-90 transition-opacity`}>
+          <span className={`nav-brand-name bg-gradient-to-r ${currentStyle.textGrad} bg-clip-text text-transparent group-hover:opacity-90 transition-opacity`}>
             Ramakrishna.
           </span>
         </a>
@@ -107,7 +109,8 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center ${
+              aria-current={activeSection === item.id ? 'page' : undefined}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center whitespace-nowrap ${
                 activeSection === item.id
                   ? currentStyle.activeTab
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -119,12 +122,12 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
         </div>
 
         {/* Action Buttons */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-2 shrink-0">
           <a
             href="https://github.com/Ramakrishna9-R09"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors flex items-center justify-center"
+            className="hidden xl:flex text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors items-center justify-center"
             title="GitHub"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -136,7 +139,7 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
             href="https://www.linkedin.com/in/venkata-ramakrishna-kamepalli-b60878290/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors flex items-center justify-center"
+            className="hidden xl:flex text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors items-center justify-center"
             title="LinkedIn"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -148,11 +151,21 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
           <a
             href="./Ramakrishna.pdf"
             target="_blank"
-            className="glass-pill px-4 py-2 rounded-md text-xs font-semibold text-white flex items-center gap-2 hover:scale-105"
+            className="glass-pill nav-action px-3.5 py-2 rounded-md text-xs font-semibold text-white flex items-center gap-2 hover:scale-105"
           >
             <FileText className={`w-4 h-4 ${currentStyle.icon}`} />
             Resume PDF
           </a>
+          <button
+            onClick={() => setIsEditMode(!isEditMode)}
+            className={`glass-pill nav-action px-3.5 py-2 rounded-md text-xs font-semibold flex items-center gap-2 hover:scale-105 ${
+              isEditMode ? 'text-black bg-white border-white/40' : 'text-white'
+            }`}
+            title={isEditMode ? 'Finish updating' : 'Update portfolio'}
+          >
+            {isEditMode ? <Check className="w-4 h-4" /> : <Pencil className={`w-4 h-4 ${currentStyle.icon}`} />}
+            {isEditMode ? 'Done' : 'Update'}
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -165,6 +178,16 @@ export default function Navbar({ activeSection, activeTheme = 'purple' }: Navbar
             <FileText className={`w-3.5 h-3.5 ${currentStyle.icon}`} />
             Resume
           </a>
+          <button
+            onClick={() => setIsEditMode(!isEditMode)}
+            className={`glass-pill px-3 py-1.5 rounded-md text-[11px] font-semibold flex items-center gap-1.5 hover:scale-105 ${
+              isEditMode ? 'text-black bg-white border-white/40' : 'text-white'
+            }`}
+            title={isEditMode ? 'Finish updating' : 'Update portfolio'}
+          >
+            {isEditMode ? <Check className="w-3.5 h-3.5" /> : <Pencil className={`w-3.5 h-3.5 ${currentStyle.icon}`} />}
+            {isEditMode ? 'Done' : 'Update'}
+          </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors"

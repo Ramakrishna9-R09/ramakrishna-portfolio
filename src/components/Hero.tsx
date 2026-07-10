@@ -9,7 +9,6 @@ import {
   Terminal,
   Zap,
   ShieldCheck,
-  Sparkles,
 } from 'lucide-react';
 import { getHero, saveData } from '../data/resumeData';
 import { useEditMode } from '../context/EditModeContext';
@@ -108,20 +107,20 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
   const activeStyle = styles[activeTheme];
 
   const proofMetrics = [
-    { value: '20%', label: 'API latency reduction', detail: 'AWS Lambda + cache tuning' },
-    { value: '40%', label: 'Reliability boost', detail: 'Concurrent Python workers' },
-    { value: '7', label: 'Verified credentials', detail: 'Anthropic, MongoDB, Oracle' },
-    { value: '8.27', label: 'CGPA / 10', detail: 'Integrated M.Tech, VIT Chennai' },
+    { value: '20%', label: 'API latency reduction', detail: 'AWS Lambda cache and event pipeline tuning' },
+    { value: '40%', label: 'Reliability lift', detail: 'Concurrent Python workers on Linux edge systems' },
+    { value: '7', label: 'Verified credentials', detail: 'Anthropic, MongoDB, Oracle, AWS-ready stack' },
+    { value: '8.27', label: 'CGPA / 10', detail: 'Integrated M.Tech Software Engineering, VIT Chennai' },
   ];
 
   const commandFeed = [
-    { prompt: 'codex inspect resume --signals', result: 'Python, AWS, MongoDB, GenAI, MCP' },
-    { prompt: 'claude code review StudyMate', result: '5 LLM modules, 100% Pytest validation' },
-    { prompt: 'agent verify credentials', result: 'Anthropic MCP + Claude API certified' },
+    { prompt: 'profile.audit({ role: "AI Engineer" })', result: 'Python, AWS, MongoDB, GenAI, MCP, React' },
+    { prompt: 'systems.verify("StudyMate")', result: '5 LLM modules, pytest validation, latency optimized' },
+    { prompt: 'credentials.resolve()', result: 'Anthropic MCP + Claude API + MongoDB verified' },
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-start lg:items-center justify-center pt-28 pb-12 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-start justify-center pt-24 pb-10 overflow-hidden">
       {isEditMode && (
         <div className="absolute top-20 right-6 z-30 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded border border-emerald-500/30">
           EDIT MODE
@@ -146,23 +145,28 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
         <div className="absolute top-[-2%] left-1/2 -translate-x-1/2 w-[500px] md:w-[950px] h-[500px] md:h-[950px] border border-white/[0.012] rounded-full pointer-events-none" />
       </div>
 
-      <div className="max-w-[1180px] mx-auto px-6 relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+      <div className="max-w-[1180px] mx-auto px-6 relative z-10 grid lg:grid-cols-[1.03fr_0.97fr] gap-8 lg:gap-12 items-start">
         <div className="text-left">
-          <div className="flex flex-wrap items-center gap-3 mb-4">
+          <div className="flex flex-wrap items-center gap-2.5 mb-4">
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs md:text-sm ${activeStyle.badge}`}>
               <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-              <span className="font-semibold">Open to full-time software engineering roles</span>
+              <span className="font-semibold">Open to full-time AI and backend engineering roles</span>
             </div>
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill border text-xs md:text-sm transition-colors ${activeStyle.pillBorder}`}>
               <Bot className={`w-4 h-4 ${activeStyle.pillBot}`} />
-              <span>Claude API, MCP, agent systems</span>
+              <span>Agentic systems, cloud backends, production UI</span>
             </div>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl xl:text-8xl font-black font-display tracking-tight text-white mb-5 leading-[0.86]">
+          <div className="mb-3 flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.24em] text-white/45">
+            <span className="h-px w-10 bg-white/30" />
+            <span>AI Systems Engineer Portfolio</span>
+          </div>
+
+          <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black font-display tracking-tight text-white mb-5 leading-[0.88]">
             Venkata Ramakrishna
             <span
-              className="block mt-2 bg-gradient-to-r from-white via-neutral-200 to-white/55 bg-clip-text text-transparent transition-all duration-500"
+              className="block mt-1.5 bg-gradient-to-r from-white via-neutral-200 to-white/55 bg-clip-text text-transparent transition-all duration-500"
               style={{
                 backgroundImage:
                   activeTheme === 'emerald'
@@ -176,12 +180,12 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
             </span>
           </h1>
 
-          <p className="text-xl md:text-3xl font-display font-semibold tracking-tight text-white/82 mb-5 min-h-9">
+          <p className="text-xl md:text-2xl font-display font-semibold tracking-tight text-white/86 mb-4 min-h-8">
             I build as a <span className="text-white border-r-2 border-white pr-1 animate-pulse">{currentText}</span>
           </p>
 
-          <p className="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed mb-6">
-            Integrated M.Tech Software Engineering student at <span className="text-white font-semibold">VIT Chennai</span> building Python-first backend systems, AWS serverless workflows, MongoDB-backed products, and agentic interfaces that recruiters can inspect directly.
+          <p className="text-gray-300 text-base md:text-lg max-w-2xl leading-relaxed mb-5">
+            Integrated M.Tech Software Engineering student at <span className="text-white font-semibold">VIT Chennai</span> building Python-first backend systems, AWS serverless workflows, MongoDB-backed products, and recruiter-ready AI interfaces with measurable engineering proof.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-5 text-[10px] font-mono text-gray-400 uppercase tracking-widest">
@@ -192,7 +196,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center mb-7">
+          <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center mb-6">
             <a
               href="./Ramakrishna.pdf"
               target="_blank"
@@ -229,23 +233,23 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
 
           <div className="grid grid-cols-2 gap-3 max-w-2xl">
             {proofMetrics.map((stat) => (
-              <div key={stat.label} className="glass-card border-white/5 rounded-2xl p-4 hover:translate-y-[-2px] transition-transform">
+              <div key={stat.label} className="glass-card hero-proof-card border-white/5 rounded-2xl p-4 hover:translate-y-[-2px] transition-transform">
                 <p className="text-2xl md:text-3xl font-black font-display text-white">{stat.value}</p>
                 <p className="text-[10px] uppercase tracking-wider text-gray-300 mt-1 font-semibold">{stat.label}</p>
-                <p className="hidden xl:block text-[11px] text-gray-500 mt-1.5">{stat.detail}</p>
+                <p className="hidden xl:block text-[11px] text-gray-500 mt-1.5 leading-relaxed">{stat.detail}</p>
               </div>
             ))}
           </div>
         </div>
 
         <div className="relative">
-          <div className="glass-card rounded-2xl border-white/15 overflow-hidden bg-black/55 shadow-2xl shadow-black/50">
+          <div className="glass-card hero-command-center rounded-2xl border-white/15 overflow-hidden bg-black/55 shadow-2xl shadow-black/50">
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-white/[0.04]">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-white/80" />
                 <span className="w-3 h-3 rounded-full bg-white/35" />
                 <span className="w-3 h-3 rounded-full bg-white/20" />
-                <span className="ml-2 text-xs font-mono text-gray-400">developer-control-surface</span>
+                <span className="ml-2 text-xs font-mono text-gray-400">ai-engineer-control-plane</span>
               </div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-white bg-white/10 border border-white/20 px-2 py-1 rounded-full">ready</span>
             </div>
@@ -256,14 +260,14 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
                   <Terminal className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-display font-bold text-white">Premium developer portfolio OS</p>
-                  <p className="text-xs text-gray-500">Proof, systems, credentials, and contact paths in one surface</p>
+                  <p className="text-sm font-display font-bold text-white">Production-grade AI portfolio OS</p>
+                  <p className="text-xs text-gray-500">Systems proof, credentials, metrics, and source paths in one surface</p>
                 </div>
               </div>
 
               <div className="space-y-2.5 font-mono text-[11px]">
                 {commandFeed.map((line) => (
-                  <div key={line.prompt} className="rounded-2xl bg-white/[0.035] border border-white/[0.06] p-3">
+                  <div key={line.prompt} className="rounded-2xl bg-white/[0.035] border border-white/[0.06] p-3 hero-command-line">
                     <p className="text-white/85">
                       <span className="text-gray-500">$</span> {line.prompt}
                     </p>
@@ -281,7 +285,7 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
                   { icon: Database, label: 'Storage', value: 'MongoDB' },
                   { icon: ShieldCheck, label: 'Verified', value: 'MCP' },
                 ].map(({ icon: Icon, label, value }) => (
-                  <div key={label} className="rounded-2xl border border-white/7 bg-white/[0.025] p-2.5 text-center">
+                  <div key={label} className="rounded-2xl border border-white/7 bg-white/[0.025] p-2.5 text-center hero-system-tile">
                     <Icon className={`w-5 h-5 mx-auto mb-2 ${activeStyle.pillBot}`} />
                     <p className="text-[10px] uppercase tracking-wider text-gray-500">{label}</p>
                     <p className="text-sm font-bold text-white">{value}</p>
@@ -289,15 +293,13 @@ export default function Hero({ activeTheme, setActiveTheme }: HeroProps) {
                 ))}
               </div>
 
-              <div className="mt-4 rounded-2xl border border-white/15 bg-white/[0.08] p-3.5 flex items-start gap-3">
-                <Sparkles className="w-5 h-5 text-white mt-0.5" />
-                <p className="text-xs xl:text-sm text-gray-300 leading-relaxed">
-                  Designed like a live engineering artifact: commands, telemetry, project traces, credentials, and contact paths all visible without recruiter guesswork.
-                </p>
-              </div>
-
-              <div className="mt-4 flex items-center justify-between gap-4">
-                <div className="text-[10px] uppercase tracking-widest font-mono text-gray-500">Interface tone</div>
+              <div className="mt-4 flex items-center justify-between gap-4 border-t border-white/10 pt-4">
+                <div className="text-[10px] uppercase tracking-widest font-mono text-gray-500">Signal layer</div>
+                <div className="hidden sm:flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-white/70">
+                  {['RAG UI', 'Cloud APIs', 'Typed React'].map((item) => (
+                    <span key={item} className="rounded-full border border-white/10 bg-black/25 px-2.5 py-1">{item}</span>
+                  ))}
+                </div>
                 <div className="flex items-center gap-2.5 bg-white/5 border border-white/10 rounded-full p-1.5 backdrop-blur-md">
                   <button aria-label="Black theme" onClick={() => setActiveTheme('purple')} className={`w-5 h-5 rounded-full bg-neutral-100 border-2 cursor-pointer transition-transform ${activeTheme === 'purple' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />
                   <button aria-label="Performance theme" onClick={() => setActiveTheme('emerald')} className={`w-5 h-5 rounded-full bg-neutral-300 border-2 cursor-pointer transition-transform ${activeTheme === 'emerald' ? 'border-white scale-110' : 'border-transparent opacity-60 hover:opacity-100'}`} />

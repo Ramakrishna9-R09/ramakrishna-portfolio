@@ -31,7 +31,7 @@ export default function AIAssistant() {
     { 
       id: 'welcome',
       sender: 'assistant', 
-      text: "Hello! I am Venkata's custom AI Assistant. Ask me anything about his credentials, projects, or background. Toggle the Developer Panel icon above to inspect the Prompt Playground and RAG pipelines!" 
+      text: "I am Venkata's portfolio intelligence layer. Ask about projects, credentials, architecture decisions, availability, or backend and AI engineering proof points."
     }
   ]);
   const [inputText, setInputText] = useState('');

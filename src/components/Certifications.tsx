@@ -45,10 +45,10 @@ export default function Certifications() {
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 font-display text-white">
-            Industry Credentials
+            Verified Credentials
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-            Verified qualifications and technical achievements, highlighting certifications in NoSQL and advanced Agentic AI systems.
+            Recruiter-verifiable signals across agentic AI, Claude API, MCP, MongoDB, Oracle Cloud, and software engineering fundamentals.
           </p>
         </div>
 
