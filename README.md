@@ -4,7 +4,7 @@ This is a premium, high-performance, and interactive single-page developer portf
 
 The design combines Google and Apple senior developer aesthetics: a sleek dark mode theme (`#030014`), responsive Constellation Canvas animation, interactive diagnostics HUD telemetry, a live Claude AI RAG Chatbot, and a Model Context Protocol (MCP) JSON-RPC client simulator.
 
-Live portfolio: https://ramakrishna-portfolio-main.vercel.app
+Live portfolio: https://ramakrishna-portfolio-delta.vercel.app/
 
 ---
 
