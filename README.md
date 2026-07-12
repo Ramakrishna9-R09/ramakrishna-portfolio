@@ -86,4 +86,4 @@ npm run build
 
 ## 🌐 Production Deployment
 The website is automatically built and aliased to:
-**[https://ramakrishna-portfolio-main.vercel.app](https://ramakrishna-portfolio-main.vercel.app)**
+**[https://ramakrishna-portfolio-delta.vercel.app/](https://ramakrishna-portfolio-delta.vercel.app/)**
